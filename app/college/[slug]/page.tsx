@@ -42,7 +42,7 @@ const CollegeDetailPage: React.FC = () => {
   const whatsNewItems = [
     {
       date: "26 Dec, 2025",
-      content: "CAT 2025 Result has been announced. Candidates can download their scorecards from <a href='#' class='text-[#0060d1] hover:underline'>iimcat.ac.in</a>. Also, students can use the KollegeApply's <a href='#' class='text-[#0060d1] hover:underline font-semibold'>CAT College Predictor</a> to check their admission chances.",
+      content: "CAT 2025 Result has been announced. Candidates can download their scorecards from <a href='#' class='text-[#E63946] hover:underline'>iimcat.ac.in</a>. Also, students can use the KollegeApply's <a href='#' class='text-[#E63946] hover:underline font-semibold'>CAT College Predictor</a> to check their admission chances.",
     },
     {
       date: "13 Nov, 2025",
@@ -97,7 +97,7 @@ const CollegeDetailPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8f9fa]">
+    <div className="min-h-screen bg-[#F9F7F2]">
       <Breadcrumb items={breadcrumbItems} />
 
       <CollegeHeader
@@ -123,10 +123,10 @@ const CollegeDetailPage: React.FC = () => {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Last Updated */}
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-[#2D2D2D]">
               • Updated on <span className="font-semibold">26 Dec, 2025</span>{" "}
               by{" "}
-              <span className="text-[#0060d1] font-semibold">Shivam Kumar</span>
+              <span className="text-[#E63946] font-semibold">Shivam Kumar</span>
             </div>
 
             <WhatsNew newsItems={whatsNewItems} />

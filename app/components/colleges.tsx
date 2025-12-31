@@ -92,15 +92,15 @@ const COLLEGES = [
 
 const ExploreColleges: React.FC = () => {
   return (
-    <div className="bg-[#f8f9fa] min-h-screen p-8 font-sans">
+    <div className="bg-[#F9F7F2] min-h-screen p-8 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Header and Filter Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-[#2D2D2D]">
               Explore Colleges
             </h2>
-            <p className="text-gray-500">
+            <p className="text-[#2D2D2D]">
               Refine your search to find the perfect match.
             </p>
           </div>
@@ -114,12 +114,12 @@ const ExploreColleges: React.FC = () => {
             ].map((filter) => (
               <button
                 key={filter}
-                className="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+                className="px-4 py-1.5 bg-[#EFEBE0] border border-[#EFEBE0] rounded-full text-sm font-medium text-[#2D2D2D] hover:bg-[#EFEBE0] hover:opacity-80 flex items-center gap-2"
               >
                 {filter} <span className="text-[10px]">▼</span>
               </button>
             ))}
-            <button className="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+            <button className="px-4 py-1.5 bg-[#EFEBE0] border border-[#EFEBE0] rounded-full text-sm font-medium text-[#2D2D2D] hover:bg-[#EFEBE0] hover:opacity-80 flex items-center gap-2">
               All Filters <span className="rotate-90">≡</span>
             </button>
           </div>
@@ -136,51 +136,51 @@ const ExploreColleges: React.FC = () => {
           {/* Sidebar Section */}
           <div className="flex flex-col gap-6">
             {/* Latest News */}
-            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="font-semibold text-gray-900 text-sm mb-6">
+            <div className="bg-[#EFEBE0] p-6 rounded-2xl border border-[#EFEBE0] shadow-sm">
+              <h3 className="font-semibold text-[#2D2D2D] text-sm mb-6">
                 Latest News
               </h3>
 
               <div className="space-y-5">
                 {articles.map((tip, i) => (
                   <div key={i} className="group cursor-pointer">
-                    <h4 className="text-sm font-semibold text-gray-800 group-hover:text-blue-600 transition">
+                    <h4 className="text-sm font-semibold text-[#2D2D2D] group-hover:text-[#E63946] transition">
                       {tip.title}
                     </h4>
-                    <p className="text-[11px] text-gray-400 mt-1 uppercase">
+                    <p className="text-[11px] text-[#2D2D2D] mt-1 uppercase">
                       {tip.time}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <button className="w-full text-center text-xs font-semibold text-blue-600 mt-8 hover:underline">
+              <button className="w-full text-center text-xs font-semibold text-[#E63946] mt-8 hover:underline">
                 View All News
               </button>
             </div>
 
             {/* College of the Month */}
-            <div className="bg-blue-50/60 p-6 rounded-2xl border border-blue-100 shadow-sm">
-              <h3 className="font-semibold text-gray-900 text-sm mb-4">
+            <div className="bg-[#EFEBE0] p-6 rounded-2xl border border-[#EFEBE0] shadow-sm">
+              <h3 className="font-semibold text-[#2D2D2D] text-sm mb-4">
                 College of the Month
               </h3>
 
               <div className="mb-3">
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-[#2D2D2D]">
                   Duke University
                 </h4>
-                <p className="text-[11px] text-gray-500">
+                <p className="text-[11px] text-[#2D2D2D]">
                   Durham, North Carolina
                 </p>
               </div>
 
-              <p className="text-[12px] text-gray-600 leading-relaxed mb-6">
+              <p className="text-[12px] text-[#2D2D2D] leading-relaxed mb-6">
                 Duke University is known for its strong academic reputation,
                 research-driven culture, and vibrant campus life. It
                 consistently ranks among the top universities worldwide.
               </p>
 
-              <button className="w-full py-2.5 bg-white text-blue-600 text-xs font-semibold rounded-xl border border-blue-100 hover:bg-blue-50 transition">
+              <button className="w-full py-2.5 bg-[#F9F7F2] text-[#E63946] text-xs font-semibold rounded-xl border border-[#EFEBE0] hover:bg-[#EFEBE0] transition">
                 Explore College
               </button>
             </div>
@@ -189,7 +189,7 @@ const ExploreColleges: React.FC = () => {
 
         {/* Load More Button */}
         <div className="flex justify-center mt-12">
-          <button className="px-8 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 hover:shadow-md transition-shadow">
+          <button className="px-8 py-2.5 bg-[#EFEBE0] border border-[#EFEBE0] rounded-full text-sm font-bold text-[#2D2D2D] hover:shadow-md transition-shadow">
             Load More Colleges
           </button>
         </div>

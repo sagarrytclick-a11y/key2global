@@ -51,9 +51,9 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-[#F9F7F2] shadow-lg sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-gray-50 to-white border-b border-gray-200">
+      <div className="bg-gradient-to-r from-[#EFEBE0] to-[#F9F7F2] border-b border-[#EFEBE0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -63,19 +63,17 @@ const Navbar: React.FC = () => {
 
             <Link href="/" className="flex items-center gap-3 group cursor-pointer">
               <div className="relative flex items-center gap-3">
-                {/* Image Component Implementation:
-        - Path starts from / (referencing the public folder)
-        - 'priority' added because this is likely in the Navbar (LCP element)
-    */}
+
                 <div className="relative  transform group-hover:scale-110 transition-transform">
-                  <Image
-                    src="/logo.png"
-                    alt="Admission Campus Logo"
+                  <h1 className="text-2xl font-bold text-[#2D2D2D]">Key2Global</h1>
+                  {/* <Image
+                    src="/public/logo.png"
+                    alt="Key2Global Logo"
                     width={100}
                     height={100}
                     priority
                     className="object-contain"
-                  />
+                  /> */}
                 </div>
               </div>
             </Link>
@@ -91,12 +89,12 @@ const Navbar: React.FC = () => {
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center gap-4">
               <Link href={"/login"}>
-                <button className="px-6 py-2 text-gray-700 font-medium hover:text-blue-600 transition-colors">
+                <button className="px-6 py-2 text-[#2D2D2D] font-medium hover:text-[#E63946] transition-colors">
                   Login
                 </button>
               </Link>
               <Link href={"/sign-up"}>
-                <button className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
+                <button className="px-6 py-2.5 bg-gradient-to-r from-[#E63946] to-[#E63946] text-white font-semibold rounded-lg hover:from-[#E63946] hover:to-[#E63946] hover:opacity-90 transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
                   Sign Up
                   <svg
                     className="w-4 h-4"
@@ -118,7 +116,7 @@ const Navbar: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="md:hidden text-[#2D2D2D] p-2 hover:bg-[#EFEBE0] rounded-lg transition-colors"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -131,7 +129,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Navigation Menu */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-[#F9F7F2] border-b border-[#EFEBE0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center justify-center gap-1 py-3">
@@ -144,7 +142,7 @@ const Navbar: React.FC = () => {
                 }
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center gap-1 px-4 py-2 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all group">
+                <button className="flex items-center gap-1 px-4 py-2 text-[#2D2D2D] font-medium hover:bg-[#EFEBE0] hover:text-[#E63946] rounded-lg transition-all group">
                   {item.label}
                   {item.hasDropdown && (
                     <ChevronDown className="w-6 h-6 group-hover:rotate-180 transition-transform" />
@@ -157,13 +155,13 @@ const Navbar: React.FC = () => {
                   <div className="absolute top-full left-0 w-56 pt-2 z-50 animate-fadeIn">
                     {/* ^ Removed mt-2, added pt-2. This "pt-2" acts as a bridge. */}
 
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                    <div className="bg-[#F9F7F2] rounded-lg shadow-xl border border-[#EFEBE0] py-2">
                       {/* ^ The actual styled box starts here */}
                       {item.items?.map((subItem, subIndex) => (
                         <a
                           key={subIndex}
                           href="#"
-                          className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium"
+                          className="block px-4 py-2.5 text-[#2D2D2D] hover:bg-[#EFEBE0] hover:text-[#E63946] transition-colors font-medium"
                         >
                           {subItem}
                         </a>
@@ -186,7 +184,7 @@ const Navbar: React.FC = () => {
                         activeDropdown === item.label ? null : item.label
                       )
                     }
-                    className="w-full flex items-center justify-between px-4 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-3 text-[#2D2D2D] font-medium hover:bg-[#EFEBE0] hover:text-[#E63946] rounded-lg transition-colors"
                   >
                     {item.label}
                     {item.hasDropdown && (
@@ -203,7 +201,7 @@ const Navbar: React.FC = () => {
                         <a
                           key={subIndex}
                           href="#"
-                          className="block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          className="block px-4 py-2 text-[#2D2D2D] hover:text-[#E63946] hover:bg-[#EFEBE0] rounded-lg transition-colors"
                         >
                           {subItem}
                         </a>
@@ -214,11 +212,11 @@ const Navbar: React.FC = () => {
               ))}
 
               {/* Mobile Auth Buttons */}
-              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
-                <button className="w-full px-6 py-3 text-gray-700 font-medium bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+              <div className="flex flex-col gap-3 pt-4 border-t border-[#EFEBE0]">
+                <button className="w-full px-6 py-3 text-[#2D2D2D] font-medium bg-[#EFEBE0] hover:bg-[#EFEBE0] hover:opacity-80 rounded-lg transition-colors">
                   Login
                 </button>
-                <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-colors shadow-md">
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-[#E63946] to-[#E63946] text-white font-semibold rounded-lg hover:from-[#E63946] hover:to-[#E63946] hover:opacity-90 transition-colors shadow-md">
                   Sign Up
                 </button>
               </div>

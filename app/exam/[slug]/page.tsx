@@ -51,12 +51,12 @@ export default function ExamDetailPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F9F7F2]">
       
 
       {/* Breadcrumb */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-6 py-3 text-sm text-gray-600">
+      <div className="bg-[#EFEBE0] border-b">
+        <div className="max-w-7xl mx-auto px-6 py-3 text-sm text-[#2D2D2D]">
           Home &gt; SLAT &gt; Info
         </div>
       </div>
@@ -66,26 +66,26 @@ export default function ExamDetailPage() {
           {/* Main Content */}
           <div className="lg:col-span-2">
             {/* Title Card */}
-            <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <div className="bg-[#EFEBE0] rounded-lg shadow-sm p-6 mb-6">
               <div className="flex items-start gap-4">
                 <div className="text-5xl">{examData.logo}</div>
                 <div className="flex-1">
-                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h1 className="text-2xl font-bold text-[#2D2D2D] mb-2">
                     {examData.name}: Test 1 (Dec 20), Test 2 Admit Card (Out), Result, Cutoff, Counselling
                   </h1>
-                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                  <div className="flex items-center gap-4 text-sm text-[#2D2D2D]">
                     <span>Updated on {examData.updatedOn} by {examData.updatedBy}</span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="flex items-center gap-2 text-sm bg-blue-50 text-blue-700 px-3 py-2 rounded-lg mb-2">
+                  <div className="flex items-center gap-2 text-sm bg-[#F9F7F2] text-[#E63946] px-3 py-2 rounded-lg mb-2">
                     <Calendar className="w-4 h-4" />
                     Exam Date - {examData.examDate}
                   </div>
-                  <button className="text-blue-600 border border-blue-600 px-4 py-2 rounded-lg text-sm hover:bg-blue-50 mb-2 w-full">
+                  <button className="text-[#E63946] border border-[#E63946] px-4 py-2 rounded-lg text-sm hover:bg-[#EFEBE0] mb-2 w-full">
                     Free Counselling
                   </button>
-                  <button className="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-slate-700 w-full">
+                  <button className="bg-[#E63946] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#E63946] hover:opacity-90 w-full">
                     Get Free Mock Tests
                   </button>
                 </div>
@@ -93,16 +93,16 @@ export default function ExamDetailPage() {
             </div>
 
             {/* Tabs */}
-            <div className="bg-white rounded-lg shadow-sm mb-6 overflow-x-auto">
-              <div className="flex border-b">
+            <div className="bg-[#EFEBE0] rounded-lg shadow-sm mb-6 overflow-x-auto">
+              <div className="flex border-b border-[#EFEBE0]">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-4 py-3 text-sm font-medium whitespace-nowrap ${
                       activeTab === tab.id
-                        ? 'text-blue-600 border-b-2 border-blue-600'
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'text-[#E63946] border-b-2 border-[#E63946]'
+                        : 'text-[#2D2D2D] hover:text-[#E63946]'
                     }`}
                   >
                     {tab.label}
@@ -112,23 +112,23 @@ export default function ExamDetailPage() {
             </div>
 
             {/* Content Area */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="bg-[#EFEBE0] rounded-lg shadow-sm p-6">
               {activeTab === 'info' && (
                 <div>
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-                    <p className="text-gray-800">
+                  <div className="bg-[#F9F7F2] border-l-4 border-[#E63946] p-4 mb-6">
+                    <p className="text-[#2D2D2D]">
                       SLAT 2026 Test 1 is going to be held tomorrow, <strong>{examData.test1Date}</strong>. Candidates should download the Test 1 Admit Card from the official website.
                       The SLAT 2026 Test 2 is scheduled to be held on <strong>{examData.test2Date}</strong>. Test 2 Admit Card was released on <strong>{examData.admitCardDate}</strong>.
                     </p>
                   </div>
 
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-[#2D2D2D] mb-4">
                     Qualifying students will be able to get admission into the B.A. LLB & B.B.A. LLB. programmes of the four Symbiosis Law Schools. During selection,
                     SLAT 2026 will carry <strong>{examData.weightage.slat} weightage</strong>, while the Personal Interview (PI) round will carry <strong>{examData.weightage.pi} weightage</strong>.
                     The SLAT 2026 Results will be released on <strong>{examData.resultDate}</strong>. Continue reading further to know more about the SLAT 2026 entrance exam in detail.
                   </p>
 
-                  <div className="bg-blue-500 text-white p-4 rounded-lg mb-6">
+                  <div className="bg-[#E63946] text-white p-4 rounded-lg mb-6">
                     <h3 className="font-bold mb-4">Table of Contents</h3>
                     <ul className="space-y-2">
                       <li><a href="#" className="text-white hover:underline">SLAT 2026 Highlights</a></li>
@@ -136,33 +136,33 @@ export default function ExamDetailPage() {
                       <li><a href="#" className="text-white hover:underline">SLAT 2026 Eligibility Criteria</a></li>
                       <li><a href="#" className="text-white hover:underline">SLAT 2026 Exam Pattern</a></li>
                       <li><a href="#" className="text-white hover:underline">SLAT 2026 Syllabus</a></li>
-                      <li><a href="#" className="text-blue-200 hover:underline">+11 View More</a></li>
+                      <li><a href="#" className="text-white opacity-80 hover:underline">+11 View More</a></li>
                     </ul>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">SLAT 2026 Highlights</h2>
-                  <div className="border rounded-lg overflow-hidden">
+                  <h2 className="text-2xl font-bold text-[#2D2D2D] mb-4">SLAT 2026 Highlights</h2>
+                  <div className="border border-[#EFEBE0] rounded-lg overflow-hidden">
                     <table className="w-full">
                       <tbody>
-                        <tr className="border-b">
-                          <td className="p-3 bg-gray-50 font-medium">Exam Name</td>
-                          <td className="p-3">Symbiosis Law Admission Test (SLAT)</td>
+                        <tr className="border-b border-[#EFEBE0]">
+                          <td className="p-3 bg-[#F9F7F2] font-medium text-[#2D2D2D]">Exam Name</td>
+                          <td className="p-3 text-[#2D2D2D]">Symbiosis Law Admission Test (SLAT)</td>
                         </tr>
-                        <tr className="border-b">
-                          <td className="p-3 bg-gray-50 font-medium">Conducting Body</td>
-                          <td className="p-3">Symbiosis International University</td>
+                        <tr className="border-b border-[#EFEBE0]">
+                          <td className="p-3 bg-[#F9F7F2] font-medium text-[#2D2D2D]">Conducting Body</td>
+                          <td className="p-3 text-[#2D2D2D]">Symbiosis International University</td>
                         </tr>
-                        <tr className="border-b">
-                          <td className="p-3 bg-gray-50 font-medium">Exam Level</td>
-                          <td className="p-3">National</td>
+                        <tr className="border-b border-[#EFEBE0]">
+                          <td className="p-3 bg-[#F9F7F2] font-medium text-[#2D2D2D]">Exam Level</td>
+                          <td className="p-3 text-[#2D2D2D]">National</td>
                         </tr>
-                        <tr className="border-b">
-                          <td className="p-3 bg-gray-50 font-medium">Exam Frequency</td>
-                          <td className="p-3">Once a year</td>
+                        <tr className="border-b border-[#EFEBE0]">
+                          <td className="p-3 bg-[#F9F7F2] font-medium text-[#2D2D2D]">Exam Frequency</td>
+                          <td className="p-3 text-[#2D2D2D]">Once a year</td>
                         </tr>
                         <tr>
-                          <td className="p-3 bg-gray-50 font-medium">Mode of Exam</td>
-                          <td className="p-3">Computer Based Test (CBT)</td>
+                          <td className="p-3 bg-[#F9F7F2] font-medium text-[#2D2D2D]">Mode of Exam</td>
+                          <td className="p-3 text-[#2D2D2D]">Computer Based Test (CBT)</td>
                         </tr>
                       </tbody>
                     </table>
@@ -172,21 +172,21 @@ export default function ExamDetailPage() {
 
               {activeTab === 'colleges' && (
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Colleges Accepting SLAT 2026</h2>
-                  <p className="text-gray-600 mb-6">
+                  <h2 className="text-2xl font-bold text-[#2D2D2D] mb-4">Colleges Accepting SLAT 2026</h2>
+                  <p className="text-[#2D2D2D] mb-6">
                     SLAT scores are accepted by the following Symbiosis Law Schools for admission to their B.A. LLB and B.B.A. LLB programmes.
                   </p>
                   <div className="space-y-4">
                     {colleges.map((college, index) => (
-                      <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div key={index} className="border border-[#EFEBE0] rounded-lg p-4 hover:shadow-md transition-shadow bg-[#F9F7F2]">
                         <div className="flex items-start justify-between">
                           <div className="flex gap-4">
-                            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold">
+                            <div className="w-12 h-12 bg-[#EFEBE0] rounded-lg flex items-center justify-center text-[#E63946] font-bold">
                               #{college.rank}
                             </div>
                             <div>
-                              <h3 className="font-bold text-gray-900 mb-1">{college.name}</h3>
-                              <div className="flex items-center gap-4 text-sm text-gray-600">
+                              <h3 className="font-bold text-[#2D2D2D] mb-1">{college.name}</h3>
+                              <div className="flex items-center gap-4 text-sm text-[#2D2D2D]">
                                 <span className="flex items-center gap-1">
                                   <MapPin className="w-4 h-4" />
                                   {college.location}
@@ -198,7 +198,7 @@ export default function ExamDetailPage() {
                               </div>
                             </div>
                           </div>
-                          <button className="text-blue-600 hover:text-blue-700">
+                          <button className="text-[#E63946] hover:text-[#E63946] hover:opacity-80">
                             <ChevronRight className="w-5 h-5" />
                           </button>
                         </div>
@@ -209,8 +209,8 @@ export default function ExamDetailPage() {
               )}
 
               {activeTab !== 'info' && activeTab !== 'colleges' && (
-                <div className="text-center py-12 text-gray-500">
-                  <FileText className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                <div className="text-center py-12 text-[#2D2D2D]">
+                  <FileText className="w-12 h-12 mx-auto mb-4 text-[#2D2D2D]" />
                   <p>Content for {tabs.find(t => t.id === activeTab)?.label} tab</p>
                   <p className="text-sm mt-2">This section will contain detailed information about {tabs.find(t => t.id === activeTab)?.label.toLowerCase()}</p>
                 </div>
@@ -221,22 +221,22 @@ export default function ExamDetailPage() {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             {/* Upcoming Exams */}
-            <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <div className="bg-[#EFEBE0] rounded-lg shadow-sm p-6 mb-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="font-bold text-[#2D2D2D] flex items-center gap-2">
                   <Calendar className="w-5 h-5" />
                   Upcoming Exams
                 </h3>
               </div>
               <div className="space-y-3">
                 {upcomingExams.map((exam, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                  <div key={index} className="flex items-center gap-3 p-3 hover:bg-[#F9F7F2] rounded-lg cursor-pointer">
                     <div className={`w-10 h-10 ${exam.color} rounded-lg flex items-center justify-center text-white font-bold text-sm`}>
                       {exam.name.substring(0, 2)}
                     </div>
                     <div className="flex-1">
-                      <div className="font-medium text-gray-900">{exam.name}</div>
-                      <div className="text-sm text-gray-600">{exam.date}</div>
+                      <div className="font-medium text-[#2D2D2D]">{exam.name}</div>
+                      <div className="text-sm text-[#2D2D2D]">{exam.date}</div>
                     </div>
                   </div>
                 ))}
@@ -244,33 +244,33 @@ export default function ExamDetailPage() {
             </div>
 
             {/* News & Updates */}
-            <div className="bg-slate-800 text-white rounded-lg shadow-sm p-6">
+            <div className="bg-[#2D2D2D] text-white rounded-lg shadow-sm p-6">
               <h3 className="font-bold mb-4 flex items-center gap-2">
                 <FileText className="w-5 h-5" />
                 News & Updates
               </h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-[#FFB703] mt-1">•</span>
                   <span>SLAT 2026 Test 1 scheduled for December 20, 2025</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-[#FFB703] mt-1">•</span>
                   <span>Admit cards for Test 2 released on official website</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-[#FFB703] mt-1">•</span>
                   <span>Registration deadline extended till December 15</span>
                 </li>
               </ul>
             </div>
 
             {/* Call to Action */}
-            <div className="mt-6 bg-red-500 text-white rounded-lg shadow-sm p-6 text-center">
+            <div className="mt-6 bg-[#E63946] text-white rounded-lg shadow-sm p-6 text-center">
               <Phone className="w-8 h-8 mx-auto mb-3" />
               <h3 className="font-bold text-lg mb-2">Need Help?</h3>
               <p className="text-sm mb-4">Get free counselling from our experts</p>
-              <button className="bg-white text-red-500 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 w-full">
+              <button className="bg-white text-[#E63946] px-6 py-2 rounded-lg font-medium hover:bg-[#F9F7F2] w-full">
                 Call Now
               </button>
             </div>

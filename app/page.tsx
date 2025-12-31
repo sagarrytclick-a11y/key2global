@@ -14,8 +14,7 @@ import ExploreProgramsComponent from "./components/ExplorePrograms";
 
 export default function Home() {
   return (
-    <div className="bg-[#f8f9fa] w-full">
-    
+    <div className="bg-[#F9F7F2] w-full">
       <Hero />
       <ExploreProgramsComponent/>
       <ExploreColleges />
@@ -27,7 +26,6 @@ export default function Home() {
       <ProcessSteps/>
       <StudentStoriesExact/>
       <CTASection/>
-      
     </div>
   );
 }

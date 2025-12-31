@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               key={index}
               className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md px-3 py-2 md:px-6 md:py-3 rounded-xl md:rounded-full border border-white/20 hover:bg-white/20 transition-all"
             >
-              <div className="bg-blue-600 p-1.5 md:p-2 rounded-full text-white shrink-0">
+              <div className="bg-[#E63946] p-1.5 md:p-2 rounded-full text-white shrink-0">
                 {stat.icon}
               </div>
               <div className="text-left">
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
                 className="w-full py-2 md:py-4 text-gray-700 focus:outline-none text-sm md:text-base bg-transparent"
               />
             </div>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-4 px-8 rounded-lg md:rounded-xl transition-all shadow-lg active:scale-95">
+            <button className="bg-[#E63946] hover:bg-[#E63946] hover:opacity-90 text-white font-bold py-3 md:py-4 px-8 rounded-lg md:rounded-xl transition-all shadow-lg active:scale-95">
               Search
             </button>
           </div>
@@ -131,7 +131,7 @@ const Hero: React.FC = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'w-10 bg-blue-500' : 'w-4 bg-white/30 hover:bg-white/50'
+                index === currentSlide ? 'w-10 bg-[#FFB703]' : 'w-4 bg-white/30 hover:bg-white/50'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

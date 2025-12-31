@@ -27,7 +27,7 @@ const HighlightsTable: React.FC<HighlightsTableProps> = ({
             <React.Fragment key={index}>
               <a
                 href={link.href}
-                className="text-[#0060d1] hover:underline"
+                className="text-[#E63946] hover:underline"
               >
                 {link.text}
               </a>
@@ -42,15 +42,15 @@ const HighlightsTable: React.FC<HighlightsTableProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-md transition-shadow">
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">
+    <div className="bg-[#EFEBE0] rounded-xl p-6 border border-[#EFEBE0] shadow-sm hover:shadow-md transition-shadow">
+      <h2 className="text-2xl font-bold text-[#2D2D2D] mb-4">
         {title}
       </h2>
 
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="bg-[#0060d1] text-white">
+            <tr className="bg-[#E63946] text-white">
               <th className="px-6 py-3 text-left font-semibold rounded-tl-lg">
                 Parameter
               </th>
@@ -63,12 +63,12 @@ const HighlightsTable: React.FC<HighlightsTableProps> = ({
             {highlights.map((item, idx) => (
               <tr
                 key={idx}
-                className={idx % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                className={idx % 2 === 0 ? "bg-[#F9F7F2]" : "bg-[#EFEBE0]"}
               >
-                <td className="px-6 py-4 font-medium text-gray-900">
+                <td className="px-6 py-4 font-medium text-[#2D2D2D]">
                   {item.parameter}
                 </td>
-                <td className="px-6 py-4 text-gray-700">
+                <td className="px-6 py-4 text-[#2D2D2D]">
                   {renderValue(item)}
                 </td>
               </tr>

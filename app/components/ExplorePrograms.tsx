@@ -43,15 +43,15 @@ const programs: Program[] = [
 ];
 
 const Card: React.FC<CardProps> = ({ icon, title, description, tags, links, linkText, navigate }) => (
-  <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col h-full border border-slate-100">
+  <div className="group bg-[#EFEBE0] rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col h-full border border-[#EFEBE0]">
     <div className="flex items-center gap-4 mb-5">
-      <div className="bg-blue-600 p-3 rounded-xl shadow-blue-100 shadow-lg text-white group-hover:scale-110 transition-transform">
+      <div className="bg-[#E63946] p-3 rounded-xl shadow-[#E63946]/20 shadow-lg text-white group-hover:scale-110 transition-transform">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-slate-800 leading-tight">{title}</h3>
+      <h3 className="text-xl font-bold text-[#2D2D2D] leading-tight">{title}</h3>
     </div>
 
-    <p className="text-slate-500 text-sm mb-5 leading-relaxed">{description}</p>
+    <p className="text-[#2D2D2D] text-sm mb-5 leading-relaxed">{description}</p>
 
     {/* Tags Section */}
     {tags.length > 0 && (
@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = ({ icon, title, description, tags, links, link
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="flex items-center gap-1 px-3 py-1 bg-slate-50 text-slate-600 rounded-full text-xs font-semibold border border-slate-100 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-100 transition-colors cursor-pointer"
+            className="flex items-center gap-1 px-3 py-1 bg-[#F9F7F2] text-[#2D2D2D] rounded-full text-xs font-semibold border border-[#EFEBE0] hover:bg-[#EFEBE0] hover:text-[#E63946] hover:border-[#FFB703] transition-colors cursor-pointer"
           >
             <TrendingUp className="w-3 h-3" />
             {tag}
@@ -73,8 +73,8 @@ const Card: React.FC<CardProps> = ({ icon, title, description, tags, links, link
       {links.map((link, index) => (
         <div key={index}>
           {link.items?.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-2 text-slate-600 text-sm hover:text-blue-600 cursor-pointer transition-colors group/item">
-              <div className="mt-1.5 w-1 h-1 rounded-full bg-slate-300 group-hover/item:bg-blue-600" />
+            <div key={idx} className="flex items-start gap-2 text-[#2D2D2D] text-sm hover:text-[#E63946] cursor-pointer transition-colors group/item">
+              <div className="mt-1.5 w-1 h-1 rounded-full bg-[#EFEBE0] group-hover/item:bg-[#E63946]" />
               <span>{item}</span>
             </div>
           ))}
@@ -82,10 +82,10 @@ const Card: React.FC<CardProps> = ({ icon, title, description, tags, links, link
       ))}
     </div>
 
-    <div className="pt-4 border-t border-slate-50">
+    <div className="pt-4 border-t border-[#EFEBE0]">
       <button 
         onClick={() => window.location.href = navigate}
-        className="w-full py-2.5 px-4 bg-slate-50 text-blue-600 rounded-xl font-bold text-sm flex items-center justify-center gap-2 group/btn hover:bg-blue-600 hover:text-white transition-all"
+        className="w-full py-2.5 px-4 bg-[#F9F7F2] text-[#E63946] rounded-xl font-bold text-sm flex items-center justify-center gap-2 group/btn hover:bg-[#E63946] hover:text-white transition-all"
       >
         {linkText}
         <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -146,12 +146,12 @@ const ExploreProgramsComponent: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#fcfdfe] py-16 px-6 sm:px-8">
+    <div className="bg-[#F9F7F2] py-16 px-6 sm:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-sm font-bold text-blue-600 tracking-widest uppercase mb-2">Find Your Future</h2>
-            <h1 className="text-3xl font-semibold font-black text-slate-900 ">Explore Programs</h1>
+            <h2 className="text-sm font-bold text-[#E63946] tracking-widest uppercase mb-2">Find Your Future</h2>
+            <h1 className="text-3xl font-semibold font-black text-[#2D2D2D] ">Explore Programs</h1>
           </div>
          
         </div>
@@ -160,7 +160,7 @@ const ExploreProgramsComponent: React.FC = () => {
         <div className="relative mb-12 flex items-center group">
           <button
             onClick={() => scroll('left')}
-            className="absolute -left-4 z-10 bg-white p-2 rounded-full shadow-lg border border-slate-100 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100"
+            className="absolute -left-4 z-10 bg-[#EFEBE0] p-2 rounded-full shadow-lg border border-[#EFEBE0] hover:bg-[#E63946] hover:text-white transition-all opacity-0 group-hover:opacity-100"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -176,8 +176,8 @@ const ExploreProgramsComponent: React.FC = () => {
                 onClick={() => setActiveProgram(program.id)}
                 className={`px-6 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all border ${
                   activeProgram === program.id
-                    ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-100'
-                    : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300 hover:text-blue-600'
+                    ? 'bg-[#E63946] text-white border-[#E63946] shadow-lg shadow-[#E63946]/20'
+                    : 'bg-[#EFEBE0] text-[#2D2D2D] border-[#EFEBE0] hover:border-[#FFB703] hover:text-[#E63946]'
                 }`}
               >
                 {program.label}
@@ -187,7 +187,7 @@ const ExploreProgramsComponent: React.FC = () => {
 
           <button
             onClick={() => scroll('right')}
-            className="absolute -right-4 z-10 bg-white p-2 rounded-full shadow-lg border border-slate-100 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100"
+            className="absolute -right-4 z-10 bg-[#EFEBE0] p-2 rounded-full shadow-lg border border-[#EFEBE0] hover:bg-[#E63946] hover:text-white transition-all opacity-0 group-hover:opacity-100"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

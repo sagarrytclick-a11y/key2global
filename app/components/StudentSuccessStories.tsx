@@ -45,20 +45,20 @@ const StudentSuccessStories: React.FC = () => {
         {/* Section Header with Navigation */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-6">
           <div className="text-left">
-            <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tight">
+            <h2 className="text-4xl font-black text-[#2D2D2D] mb-4 tracking-tight">
               Student Success Stories
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-[#2D2D2D] text-lg">
               Join thousands of students who found their dream college.
             </p>
           </div>
 
           {/* Navigation Arrows using React Icons */}
           <div className="flex gap-4">
-            <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition-all">
+            <button className="w-12 h-12 rounded-full border border-[#EFEBE0] flex items-center justify-center text-[#2D2D2D] hover:bg-[#EFEBE0] hover:text-[#2D2D2D] transition-all">
               <FiChevronLeft size={24} />
             </button>
-            <button className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all">
+            <button className="w-12 h-12 rounded-full bg-[#E63946] flex items-center justify-center text-white shadow-lg shadow-[#E63946]/20 hover:bg-[#E63946] hover:opacity-90 transition-all">
               <FiChevronRight size={24} />
             </button>
           </div>
@@ -69,14 +69,14 @@ const StudentSuccessStories: React.FC = () => {
           {testimonials.map((item) => (
             <div 
               key={item.id} 
-              className="bg-[#f9fbfd] border-1 border-black p-10 rounded-[2.5rem] border  hover:border-gray-200 transition-all duration-300 group"
+              className="bg-[#EFEBE0] border-1 border-[#EFEBE0] p-10 rounded-[2.5rem] border  hover:border-[#FFB703] transition-all duration-300 group"
             >
               {/* Star Rating using React Icons */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <HiStar 
                     key={i} 
-                    className="text-yellow-400 text-xl" 
+                    className="text-[#FFB703] text-xl" 
                   />
                 ))}
               </div>

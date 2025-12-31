@@ -39,21 +39,21 @@ const BlogCard: React.FC<BlogCardProps> = ({
   };
 
   const cardClasses = {
-    default: 'bg-white border shadow-sm border-gray-100 rounded-xl p-6 hover:shadow-sm transition',
-    compact: 'bg-white border border-gray-100 rounded-lg p-4 hover:shadow-md transition',
-    featured: 'bg-white border shadow-sm border-gray-100 rounded-xl p-6 hover:shadow-md transition lg:flex lg:gap-6',
+    default: 'bg-[#EFEBE0] border shadow-sm border-[#EFEBE0] rounded-xl p-6 hover:shadow-sm transition',
+    compact: 'bg-[#EFEBE0] border border-[#EFEBE0] rounded-lg p-4 hover:shadow-md transition',
+    featured: 'bg-[#EFEBE0] border shadow-sm border-[#EFEBE0] rounded-xl p-6 hover:shadow-md transition lg:flex lg:gap-6',
   };
 
   const titleClasses = {
-    default: 'mt-2 text-xl font-semibold text-gray-900',
-    compact: 'mt-1 text-lg font-semibold text-gray-900',
-    featured: 'mt-2 text-2xl font-bold text-gray-900 lg:flex-1',
+    default: 'mt-2 text-xl font-semibold text-[#2D2D2D]',
+    compact: 'mt-1 text-lg font-semibold text-[#2D2D2D]',
+    featured: 'mt-2 text-2xl font-bold text-[#2D2D2D] lg:flex-1',
   };
 
   const descClasses = {
-    default: 'mt-2 text-sm text-gray-600 leading-relaxed',
-    compact: 'mt-1 text-sm text-gray-600 leading-relaxed line-clamp-2',
-    featured: 'mt-2 text-base text-gray-600 leading-relaxed lg:flex-1',
+    default: 'mt-2 text-sm text-[#2D2D2D] leading-relaxed',
+    compact: 'mt-1 text-sm text-[#2D2D2D] leading-relaxed line-clamp-2',
+    featured: 'mt-2 text-base text-[#2D2D2D] leading-relaxed lg:flex-1',
   };
 
   return (
@@ -95,7 +95,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </div>
 
         <div className={`mt-4 flex items-center justify-between ${variant === 'featured' ? 'lg:mt-6' : ''}`}>
-          <div className="flex items-center gap-4 text-xs text-gray-500">
+          <div className="flex items-center gap-4 text-xs text-[#2D2D2D]">
             {post.author && <span>By {post.author}</span>}
             {post.date && <span>{post.date}</span>}
             {post.readTime && <span>{post.readTime}</span>}
@@ -103,7 +103,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
           <Link
             href={`/blog/${post.slug}`}
-            className="text-sm font-semibold text-blue-600 hover:underline"
+            className="text-sm font-semibold text-[#E63946] hover:underline"
             // onClick={(e) => {
             //   e.stopPropagation();
             //   if (onClick) e.preventDefault();
@@ -118,7 +118,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600"
+                className="text-xs px-2 py-1 rounded-full bg-[#F9F7F2] text-[#2D2D2D]"
               >
                 #{tag}
               </span>

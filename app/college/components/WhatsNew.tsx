@@ -18,18 +18,18 @@ const WhatsNew: React.FC<WhatsNewProps> = ({
   onReadMore,
 }) => {
   return (
-    <div className="bg-white rounded-xl p-6 border shadow-sm hover:shadow-md transition-shadow">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">
+    <div className="bg-[#EFEBE0] rounded-xl p-6 border border-[#EFEBE0] shadow-sm hover:shadow-md transition-shadow">
+      <h2 className="text-xl font-bold text-[#2D2D2D] mb-4">
         {title}
       </h2>
 
       <div className="space-y-4">
         {newsItems.map((item, index) => (
           <div key={index}>
-            <span className="text-red-500 font-bold text-sm">
+            <span className="text-[#E63946] font-bold text-sm">
               {item.date}:
             </span>
-            <span className="text-gray-700 ml-2">
+            <span className="text-[#2D2D2D] ml-2">
               {item.content}
             </span>
           </div>
@@ -39,7 +39,7 @@ const WhatsNew: React.FC<WhatsNewProps> = ({
       {onReadMore && (
         <button
           onClick={onReadMore}
-          className="text-[#0060d1] font-semibold text-sm mt-4 hover:underline flex items-center gap-1 group"
+          className="text-[#E63946] font-semibold text-sm mt-4 hover:underline flex items-center gap-1 group"
         >
           Read more
           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

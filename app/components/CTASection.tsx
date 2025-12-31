@@ -2,7 +2,7 @@
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-[#2F80ED] py-20">
+    <section className="relative overflow-hidden bg-[#E63946] py-20">
       {/* Decorative Circles */}
       <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/10 rounded-full" />
       <div className="absolute -right-32 -bottom-32 w-80 h-80 bg-white/10 rounded-full" />
@@ -18,11 +18,11 @@ export default function CTASection() {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-6 py-3 rounded-lg bg-white text-blue-600 font-semibold hover:bg-gray-100 transition">
+          <button className="px-6 py-3 rounded-lg bg-white text-[#E63946] font-semibold hover:bg-[#EFEBE0] transition">
             Get Started for Free
           </button>
 
-          <button className="px-6 py-3 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition">
+          <button className="px-6 py-3 rounded-lg bg-[#FFB703] text-[#2D2D2D] font-semibold hover:bg-[#FFB703] hover:opacity-90 transition">
             Book a Consultation
           </button>
         </div>

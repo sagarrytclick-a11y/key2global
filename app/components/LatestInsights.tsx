@@ -22,7 +22,7 @@ const posts: BlogPost[] = [
     id: "1",
     slug: "top-10-tips-writing-winning-personal-statement",
     category: "GUIDE",
-    categoryColor: "text-blue-600",
+    categoryColor: "text-[#E63946]",
     title: "Top 10 Tips for Writing a Winning Personal Statement",
     desc: "Crafting a compelling essay is key to standing out. Here's how to tell your story effectively.",
     image: "/images/post1.png",
@@ -33,7 +33,7 @@ const posts: BlogPost[] = [
     id: "2",
     slug: "navigating-fafsa-step-by-step-tutorial",
     category: "FINANCIAL AID",
-    categoryColor: "text-green-600",
+    categoryColor: "text-[#FFB703]",
     title: "Navigating the FAFSA: A Step-by-Step Tutorial",
     desc: "Don't leave money on the table. We break down the financial aid process simply.",
     image: "/images/post2.png",
@@ -44,7 +44,7 @@ const posts: BlogPost[] = [
     id: "3",
     slug: "choosing-right-campus-culture",
     category: "CAMPUS LIFE",
-    categoryColor: "text-purple-600",
+    categoryColor: "text-[#E63946]",
     title: "Choosing the Right Campus Culture for You",
     desc: "Big city or college town? Understand how environment impacts your college success.",
     image: "/images/post3.png",
@@ -58,8 +58,8 @@ export default function LatestInsights() {
     <section className="max-w-7xl mx-auto px-4 py-16">
       {/* Header */}
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-900">Latest Insights</h2>
-        <a href="/blog" className="text-blue-600 font-medium hover:underline">
+        <h2 className="text-3xl font-bold text-[#2D2D2D]">Latest Insights</h2>
+        <a href="/blog" className="text-[#E63946] font-medium hover:underline">
           View all
         </a>
       </div>
@@ -79,7 +79,7 @@ export default function LatestInsights() {
 
           {/* Load More */}
           <div className="pt-4">
-            <button className="w-full md:w-auto px-6 py-3 text-sm font-semibold text-white bg-[#3182ce] hover:bg-blue-700 rounded-lg transition shadow-sm">
+            <button className="w-full md:w-auto px-6 py-3 text-sm font-semibold text-white bg-[#E63946] hover:bg-[#E63946] hover:opacity-90 rounded-lg transition shadow-sm">
               Load More Blogs
             </button>
           </div>
@@ -88,8 +88,8 @@ export default function LatestInsights() {
         {/* RIGHT: Sidebar */}
         <aside className="space-y-6">
           {/* Popular Topics */}
-          <div className="bg-white border shadow-sm border-gray-100 rounded-xl p-6">
-            <h4 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">
+          <div className="bg-[#EFEBE0] border shadow-sm border-[#EFEBE0] rounded-xl p-6">
+            <h4 className="text-sm font-semibold text-[#2D2D2D] mb-4 uppercase tracking-wider">
               Popular Topics
             </h4>
 
@@ -103,7 +103,7 @@ export default function LatestInsights() {
               ].map((topic) => (
                 <span
                   key={topic}
-                  className="text-xs px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer transition border border-transparent hover:border-blue-200"
+                  className="text-xs px-3 py-1.5 rounded-full bg-[#F9F7F2] text-[#2D2D2D] hover:bg-[#EFEBE0] hover:text-[#E63946] cursor-pointer transition border border-transparent hover:border-[#FFB703]"
                 >
                   {topic}
                 </span>
@@ -112,12 +112,12 @@ export default function LatestInsights() {
           </div>
 
           {/* Helpful Links */}
-          <div className="bg-white border shadow-sm border-gray-100 rounded-xl p-6">
-            <h4 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">
+          <div className="bg-[#EFEBE0] border shadow-sm border-[#EFEBE0] rounded-xl p-6">
+            <h4 className="text-sm font-semibold text-[#2D2D2D] mb-4 uppercase tracking-wider">
               Helpful Resources
             </h4>
 
-            <ul className="space-y-3 text-sm text-gray-600">
+            <ul className="space-y-3 text-sm text-[#2D2D2D]">
               {[
                 { name: "College Admission Process", href: "/guides/admission" },
                 { name: "Entrance Exam Calendar", href: "/exams" },
@@ -125,8 +125,8 @@ export default function LatestInsights() {
                 { name: "Scholarship Guide", href: "/scholarships" },
               ].map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="hover:text-blue-600 transition flex items-center group">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  <a href={link.href} className="hover:text-[#E63946] transition flex items-center group">
+                    <span className="w-1.5 h-1.5 bg-[#FFB703] rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {link.name}
                   </a>
                 </li>

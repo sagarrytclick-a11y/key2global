@@ -12,7 +12,7 @@ const NavigationTabs: React.FC<NavigationTabsProps> = ({
   onTabChange,
 }) => {
   return (
-    <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
+    <div className="bg-[#EFEBE0] border-b sticky top-0 z-40 shadow-sm">
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
           {tabs.map((tab) => (
@@ -21,8 +21,8 @@ const NavigationTabs: React.FC<NavigationTabsProps> = ({
               onClick={() => onTabChange(tab.toLowerCase())}
               className={`px-6 py-3 text-sm font-medium whitespace-nowrap transition-all rounded-full ${
                 activeTab === tab.toLowerCase()
-                  ? "bg-[#0060d1] text-white"
-                  : "text-gray-700 hover:bg-gray-100"
+                  ? "bg-[#E63946] text-white"
+                  : "text-[#2D2D2D] hover:bg-[#F9F7F2]"
               }`}
             >
               {tab}
