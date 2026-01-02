@@ -92,6 +92,16 @@ import {
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import {
   Table,
   TableBody,
   TableCell,
@@ -170,7 +180,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "header",
-    header: "Colleges",
+    header: "Name",
     cell: ({ row }) => {
       return <TableCellViewer item={row.original} />
     },
@@ -178,7 +188,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "type",
-    header: "Courses",
+    header: "Category",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="text-muted-foreground px-1.5">
@@ -189,10 +199,10 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "status",
-    header: "Exams",
+    header: "Status",
     cell: ({ row }) => (
       <Badge variant="outline" className="text-muted-foreground px-1.5">
-        {row.original.status === "Done" ? (
+        {row.original.status === "Published" || row.original.status === "Active" || row.original.status === "Done" || row.original.status === "Completed" ? (
           <IconCircleCheckFilled className="fill-green-500 dark:fill-green-400" />
         ) : (
           <IconLoader />
@@ -353,6 +363,8 @@ export function DataTable({
     pageIndex: 0,
     pageSize: 10,
   })
+  const [isAddCollegeOpen, setIsAddCollegeOpen] = React.useState(false)
+  const [collegeName, setCollegeName] = React.useState("")
   const sortableId = React.useId()
   const sensors = useSensors(
     useSensor(MouseSensor, {}),
@@ -426,14 +438,14 @@ export function DataTable({
           </SelectContent>
         </Select>
         <TabsList className="**:data-[slot=badge]:bg-muted-foreground/30 hidden **:data-[slot=badge]:size-5 **:data-[slot=badge]:rounded-full **:data-[slot=badge]:px-1 @4xl/main:flex">
-          <TabsTrigger value="outline">Outline</TabsTrigger>
+          <TabsTrigger value="outline">College</TabsTrigger>
           <TabsTrigger value="past-performance">
-            Past Performance <Badge variant="secondary">3</Badge>
+            Blogs <Badge variant="secondary">3</Badge>
           </TabsTrigger>
           <TabsTrigger value="key-personnel">
-            Key Personnel <Badge variant="secondary">2</Badge>
+            Exams <Badge variant="secondary">2</Badge>
           </TabsTrigger>
-          <TabsTrigger value="focus-documents">Focus Documents</TabsTrigger>
+          <TabsTrigger value="focus-documents">Courses</TabsTrigger>
         </TabsList>
         <div className="flex items-center gap-2">
           <DropdownMenu>
@@ -469,10 +481,63 @@ export function DataTable({
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button variant="outline" size="sm">
-            <IconPlus />
-            <span className="hidden lg:inline">Add Section</span>
-          </Button>
+          <Sheet open={isAddCollegeOpen} onOpenChange={setIsAddCollegeOpen}>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="sm">
+                <IconPlus />
+                <span className="hidden lg:inline">Add College</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Add New College</SheetTitle>
+                <SheetDescription>
+                  Add a new college to the system. Fill in the details below.
+                </SheetDescription>
+              </SheetHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="college-name" className="text-right">
+                    College Name
+                  </Label>
+                  <Input
+                    id="college-name"
+                    value={collegeName}
+                    onChange={(e) => setCollegeName(e.target.value)}
+                    className="col-span-3"
+                    placeholder="Enter college name"
+                  />
+                </div>
+              </div>
+              <SheetFooter>
+                <SheetClose asChild>
+                  <Button variant="outline">Cancel</Button>
+                </SheetClose>
+                <Button
+                  onClick={() => {
+                    if (collegeName.trim()) {
+                      const newCollege = {
+                        id: Math.max(...data.map(item => item.id)) + 1,
+                        header: collegeName.trim(),
+                        type: "College",
+                        status: "Active",
+                        target: "10000",
+                        limit: "20000",
+                        reviewer: "Admin"
+                      }
+                      setData([...data, newCollege])
+                      setCollegeName("")
+                      setIsAddCollegeOpen(false)
+                      toast.success("College added successfully!")
+                    }
+                  }}
+                  disabled={!collegeName.trim()}
+                >
+                  Add College
+                </Button>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
       <TabsContent
