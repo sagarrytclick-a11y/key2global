@@ -64,16 +64,17 @@ const Navbar: React.FC = () => {
             <Link href="/" className="flex items-center gap-3 group cursor-pointer">
               <div className="relative flex items-center gap-3">
 
-                <div className="relative  transform group-hover:scale-110 transition-transform">
-                  <h1 className="text-2xl font-bold text-[#2D2D2D]">Key2Global</h1>
-                  {/* <Image
-                    src="/public/logo.png"
+                <div className="relative flex items-center gap-3  transform group-hover:scale-110 transition-transform">
+                  <Image
+                  
+                    src="/logo.png"
                     alt="Key2Global Logo"
-                    width={100}
-                    height={100}
+                    width={50}
+                    height={50}
                     priority
                     className="object-contain"
-                  /> */}
+                  />
+                  <h1 className="text-2xl font-bold text-[#2D2D2D]">Key2Global</h1>
                 </div>
               </div>
             </Link>
@@ -84,6 +85,8 @@ const Navbar: React.FC = () => {
               <Link href={'/college'} >Colleges</Link>
               <Link href={'/exam'} >Exams</Link>
               <Link href={'/blog'} >Blogs</Link>
+              <Link href={'/about'} >About</Link>
+              <Link href={'/contact'} >Contact</Link>
             </div>
 
             {/* Desktop Auth Buttons */}
