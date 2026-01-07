@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "header": "Complete Guide to USA Student Visas for 2025 Intake",
+    "category": "Guides",
+    "status": "Published",
+    "date": "Oct 12, 2024",
+    "readTime": "5 min read",
+    "image": "https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg",
+    "description": "Navigating the F-1 visa process can be daunting. Here is a step-by-step breakdown of documents, interviews...",
+    "author": "Admin"
+  },
+  {
+    "id": 2,
+    "header": "Top 5 Fully Funded Scholarships in UK for International Students",
+    "category": "Scholarships",
+    "status": "Published",
+    "date": "Sep 28, 2024",
+    "readTime": "3 min read",
+    "image": "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg",
+    "description": "Don't let finances hold you back. Explore the Chevening, Commonwealth, and University-specific grants availabl...",
+    "author": "Admin"
+  },
+  {
+    "id": 3,
+    "header": "How I scored 8.0 in IELTS: Tips from a Top Scorer",
+    "category": "Success",
+    "status": "Draft",
+    "date": "Sep 15, 2024",
+    "readTime": "4 min read",
+    "image": "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg",
+    "description": "Preparation strategies, resources, and mindset shifts that helped me ace the IELTS exam in just one month.",
+    "author": "Admin"
+  },
+  {
+    "id": 4,
+    "header": "Study Abroad: Choosing the Right Country for Your Career Goals",
+    "category": "Guides",
+    "status": "Published",
+    "date": "Aug 20, 2024",
+    "readTime": "6 min read",
+    "image": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+    "description": "Learn how to align your study abroad destination with your long-term career objectives and industry trends.",
+    "author": "Admin"
+  },
+  {
+    "id": 5,
+    "header": "Understanding University Rankings: What Really Matters",
+    "category": "Tips",
+    "status": "Published",
+    "date": "Aug 5, 2024",
+    "readTime": "4 min read",
+    "image": "https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg",
+    "description": "Beyond rankings: factors like research opportunities, faculty quality, and campus culture that truly matter.",
+    "author": "Admin"
+  }
+]

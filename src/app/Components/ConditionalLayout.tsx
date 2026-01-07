@@ -1,0 +1,24 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+export default function ConditionalLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const pathname = usePathname();
+  const isAdminRoute = pathname?.startsWith('/admin');
+
+  return (
+    <>
+      {!isAdminRoute && <Navbar />}
+      <div className={isAdminRoute ? "" : "pt-20 lg:pt-28"}>
+        {children}
+      </div>
+      {!isAdminRoute && <Footer />}
+    </>
+  );
+}

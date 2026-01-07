@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Harvard University",
+    "location": "Cambridge, USA",
+    "rank": "#3 World University Rankings",
+    "tuition": "$52,659/year",
+    "acceptance": "5%",
+    "rating": "4.9/5",
+    "employability": "98%",
+    "image": "https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg",
+    "tags": ["Top Ranked", "Research University", "Campus Housing", "Scholarship"],
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "University of Oxford",
+    "location": "Oxford, UK",
+    "rank": "#2 World University Rankings",
+    "tuition": "£9,250-£38,000/year",
+    "acceptance": "17%",
+    "rating": "4.8/5",
+    "employability": "97%",
+    "image": "https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg",
+    "tags": ["Top Ranked", "Historic Campus", "Research University"],
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Stanford University",
+    "location": "Stanford, USA",
+    "rank": "#4 World University Rankings",
+    "tuition": "$58,416/year",
+    "acceptance": "4%",
+    "rating": "4.9/5",
+    "employability": "99%",
+    "image": "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg",
+    "tags": ["Top Ranked", "Research University", "Silicon Valley", "Campus Housing"],
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "University of Toronto",
+    "location": "Toronto, Canada",
+    "rank": "#21 World University Rankings",
+    "tuition": "CAD $6,100-18,000/year",
+    "acceptance": "43%",
+    "rating": "4.6/5",
+    "employability": "92%",
+    "image": "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg",
+    "tags": ["Affordable", "Research University", "International Students"],
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "University of Melbourne",
+    "location": "Melbourne, Australia",
+    "rank": "#33 World University Rankings",
+    "tuition": "AUD $25,000-50,000/year",
+    "acceptance": "70%",
+    "rating": "4.5/5",
+    "employability": "90%",
+    "image": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+    "tags": ["Affordable", "Research University", "Campus Housing"],
+    "status": "Active"
+  }
+]
