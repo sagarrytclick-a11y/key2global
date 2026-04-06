@@ -4,7 +4,7 @@ const stats = [
   {
     value: "54,200+",
     label: "Certified Alumni Network",
-    sub: "Updated as of June 2024",
+    sub: "Updated as of June 2026",
   },
   {
     value: "1,200+",

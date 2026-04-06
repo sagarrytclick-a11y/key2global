@@ -118,7 +118,7 @@ export default function MedicalCounselling() {
                 MD Radio-Diagnosis<br />Specialization
               </h3>
               <p className="text-white/70 text-[13px] font-normal leading-relaxed">
-                Highest demand for 2024. Expert vacancy tracking active.
+                Highest demand for 2026. Expert vacancy tracking active.
               </p>
             </div>
 
