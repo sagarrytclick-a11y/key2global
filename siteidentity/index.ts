@@ -29,8 +29,8 @@ export const siteIdentity = {
   // Contact Information
   contact: {
     email: "support@key2global.com",
-    phone: "+91-6239311536",
-    whatsapp: "+91-6239311536",
+    phone: "+91-78279 24534",
+    whatsapp: "+91-78279 24534",
   },
   
   address: {  

@@ -17,7 +17,12 @@ export default function MedicalCounselling() {
           </p>
 
           {/* Heading with Logo */}
-          <div className="flex items-center gap-4 mb-6">
+          <a
+            href={medicalSite?.url || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center flex-col sm:flex-row gap-4 mb-6 group hover:opacity-90 transition-opacity"
+          >
             <div className="relative w-16 h-16 shrink-0">
               <Image
                 src="/logo/medicalcounselling.png"
@@ -26,10 +31,10 @@ export default function MedicalCounselling() {
                 className="object-contain"
               />
             </div>
-            <h2 className="font-black text-gray-950 text-[2rem] sm:text-[2.5rem] leading-[1.05] tracking-tight">
+            <h2 className="font-black text-gray-950 text-[1.8rem] sm:text-[2.5rem] tracking-tight wrap-break-word">
               MedicalCounselling.com
             </h2>
-          </div>
+          </a>
 
           {/* Body */}
           <p className="text-gray-700 font-semibold text-[14px] leading-[1.75] mb-8 max-w-sm">

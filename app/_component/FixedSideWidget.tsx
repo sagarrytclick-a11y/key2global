@@ -34,11 +34,12 @@ export default function FixedSideWidget() {
             {index === 1 && (
               // Edugaydoverseas - Globe icon (no logo available)
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <circle cx="16" cy="16" r="12" stroke="#2563eb" strokeWidth="2"/>
-                  <ellipse cx="16" cy="16" rx="6" ry="12" stroke="#2563eb" strokeWidth="1.5"/>
-                  <path d="M4 16h24M16 4c-4 4-6 8-6 12s2 8 6 12M16 4c4 4 6 8 6 12s-2 8-6 12" stroke="#2563eb" strokeWidth="1.5"/>
-                </svg>
+               <Image
+                  src="/logo/edugaayds.png"
+                  alt="AlphaWorldEducation"
+                  fill
+                  className="object-contain"
+                />
               </div>
             )}
             {index === 2 && (

@@ -60,7 +60,12 @@ export default function AlphaWorldEducation() {
           </p>
           
           {/* Logo and Domain Name */}
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <a
+            href={alphaSite?.url || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-4 mb-6 flex-col sm:flex-row group hover:opacity-90 transition-opacity"
+          >
             <div className="relative w-20 h-20 shrink-0 bg-white/10 rounded-xl p-3 backdrop-blur-sm">
               <Image
                 src="/logo/alphaworld.png"
@@ -70,12 +75,12 @@ export default function AlphaWorldEducation() {
               />
             </div>
             <h2
-              className="font-black text-white leading-none tracking-tight uppercase text-left"
-              style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)" }}
+              className="font-black text-white flex leading-none tracking-tight uppercase text-left"
+              style={{ fontSize: "clamp(1.4rem, 5vw, 3.5rem)" }}
             >
               ALPHAWORLDEDUCATION.COM
             </h2>
-          </div>
+          </a>
           
           <p className="text-white/70 font-semibold text-[14.5px] leading-[1.75] mt-6 max-w-2xl mx-auto">
             The ultimate gateway to elite non-medical UG/PG programs across
