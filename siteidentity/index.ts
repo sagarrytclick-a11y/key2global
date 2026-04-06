@@ -60,7 +60,7 @@ export const siteIdentity = {
     },
     {
       name: "Edugaydoverseas",
-      url: "https://edugaydoverseas.com",
+      url: "https://edugaaydsoverseas.com/",
       description: "Overseas education consultancy"
     },
     {
