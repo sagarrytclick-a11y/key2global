@@ -120,7 +120,7 @@ export default function NotificationBell() {
           </span>
         </div>
 
-        <div className="max-h-[450px] overflow-y-auto p-4 space-y-3">
+        <div className="max-h-[350px] overflow-y-auto p-4 space-y-3">
           {notifications.map((notification) => (
             <div
               key={notification.id}
