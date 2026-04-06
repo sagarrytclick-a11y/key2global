@@ -1,23 +1,3 @@
-/**
- * Site Identity Configuration
- * ===========================
- * Centralized configuration for Key2Global website identity and contact information.
- * 
- * HOW TO UPDATE:
- * 1. Replace placeholder values (marked with "Your..." or "XXXXXX") with actual information
- * 2. Update phone numbers in international format (e.g., +91-9876543210)
- * 3. Add complete address details
- * 4. Update social media URLs with actual profile links
- * 5. Update subsidiary website URLs
- * 6. Add legal registration numbers if applicable
- * 
- * This configuration is used across:
- * - layout.tsx (metadata, title, description)
- * - Navbar.tsx (site name, subsidiary links)
- * - Footer.tsx (contact info, address, social media)
- * - WhatsAppButton.tsx (WhatsApp number, site name)
- */
-
 export const siteIdentity = {
   // Basic Information
   name: "Key2Global",
@@ -28,13 +8,13 @@ export const siteIdentity = {
   
   // Contact Information
   contact: {
-    email: "support@key2global.com",
-    phone: "+91-78279 24534",
-    whatsapp: "+91-78279 24534",
+    email: "Key2globaleducation@gmail.com",
+    phone: "+91-6239311536",
+    whatsapp: "+91-9810718430",
   },
   
   address: {  
-    street: "3rd Floor, US Complex Jasola Opp Apollo Hospital, New Delhi",
+    street: "320, 3rd Floor, U.S Complex, Mathura Road, Jasola, Delhi, 110076",
     city: "New Delhi",
     state: "Delhi",
     country: "India",
