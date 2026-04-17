@@ -9,6 +9,7 @@ import TestimonialsSection from './_component/TestimonialsSection'
 import KnowledgeHub from './_component/Knowledgehub'
 import CollegeShowcase from './_component/CollegeShowcase'
 import FixedSideWidget from './_component/FixedSideWidget'
+import CollegeStrip from './_component/CollegeStrip'
 
 const page = () => {
   return (
@@ -32,6 +33,7 @@ const page = () => {
        <TestimonialsSection />
      </div>
      <div id="contact"></div>
+     <CollegeStrip />
     </div>
   )
 }
