@@ -10,10 +10,12 @@ import KnowledgeHub from './_component/Knowledgehub'
 import CollegeShowcase from './_component/CollegeShowcase'
 import FixedSideWidget from './_component/FixedSideWidget'
 import CollegeStrip from './_component/CollegeStrip'
+import MBBSAdPopup from './_component/MBBSAdPopup'
 
 const page = () => {
   return (
     <div className='overflow-x-hidden'>
+     <MBBSAdPopup />
      <FixedSideWidget />
      <div id="about">
        <HeroSection />  
