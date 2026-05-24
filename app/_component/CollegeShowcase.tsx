@@ -39,7 +39,7 @@ const colleges = [
     rank: "Top Arts & Commerce",
     location: "Delhi",
     placement: "Avg ₹6 LPA",
-    image: "https://www.thehawk.in/_next/image?url=https%3A%2F%2Fd2py10ayqu2jji.cloudfront.net%2Fd8877ad0-6e83-487a-b0a4-57763b8190bc%2Fdelhi-university-557ca474-c1d1-45b2-a97b-152043fd14ab.jpg&w=3840&q=75",
+    image: "https://cdn.britannica.com/68/263768-050-69EEA7B7/Students-at-Delhi-University-north-campus-on-the-second-day-of-admissions-for-2021-22-on-October-5-2021-in-New-Delhi-India-University-of-Delhi.jpg",
   },
   {
     name: "NMIMS MUMBAI",
