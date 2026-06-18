@@ -3,24 +3,17 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { siteName, tagline, siteDescription, contact, address, subsidiaries as subsidiarySites, socialMedia } from "@/siteidentity";
+import { siteName, siteDescription, contact, address, subsidiaries as subsidiarySites, socialMedia } from "@/siteidentity";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
-const subsidiaries = [
-  { name: "MedicalCounselling", href: "#" },
-  { name: "Edugaydoverseas", href: "#" },
-  { name: "AlphaWorldEducation", href: "#" },
-  { name: "B.Tech Admissions", href: "#" },
-  { name: "Global BBA", href: "#" },
-  { name: "IoT Innovation", href: "#" },
-];
+const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer() {
   const { openModal } = useApplyModal();
   
   return (
-    <footer className="bg-slate-900 text-white pt-16 pb-8 px-6 md:px-12 lg:px-24 font-poppins mt-auto">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-slate-900 text-white pt-16 pb-8 px-4 sm:px-6 md:px-12 lg:px-24 font-poppins mt-auto">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12">
         
         {/* Brand Column */}
         <div className="space-y-6">
@@ -101,7 +94,7 @@ export default function Footer() {
           <p className="text-slate-300 text-sm mb-4">Questions? Reach out to our global team.</p>
           <button 
             onClick={openModal}
-            className="inline-block px-6 py-3 bg-white text-slate-900 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-blue-50 transition-colors mb-4 cursor-pointer"
+            className="inline-block w-full sm:w-auto px-6 py-3 bg-white text-slate-900 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-blue-50 transition-colors mb-4 cursor-pointer"
           >
             Get Counselling
           </button>
@@ -152,9 +145,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-        <p>© {new Date().getFullYear()} {siteName}. All Rights Reserved.</p>
-        <div className="flex gap-8">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-500 text-center md:text-left">
+        <p>© {CURRENT_YEAR} {siteName}. All Rights Reserved.</p>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
           <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
         </div>

@@ -130,7 +130,7 @@ export default function ApplyModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4">
       {/* Backdrop with blur */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fadeIn"
@@ -138,61 +138,63 @@ export default function ApplyModal() {
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-slideUp max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-slideUp max-h-[92vh] overflow-y-auto">
         
         {/* Decorative Header */}
-        <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 px-8 py-10 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 px-4 sm:px-6 py-6 sm:py-8 overflow-visible">
           {/* Animated circles */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 animate-pulse pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
           
           {/* Close Button */}
           <button
+            type="button"
             onClick={closeModal}
-            className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:rotate-90 group"
+            aria-label="Close apply modal"
+            className="absolute top-3 right-3 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm shadow-sm transition-all duration-300 hover:bg-white/20 hover:rotate-90 focus:outline-none focus:ring-2 focus:ring-white/40"
           >
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
 
           {/* Header Content */}
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full mb-3 sm:mb-4">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-xs font-semibold text-white/90 tracking-wide uppercase">Limited Seats Available</span>
+              <span className="text-[10px] sm:text-xs font-semibold text-white/90 tracking-wide uppercase">Limited Seats Available</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1.5 sm:mb-2">
               Start Your Journey
             </h2>
-            <p className="text-blue-100 text-sm md:text-base">
+            <p className="text-blue-100 text-xs sm:text-sm md:text-base leading-relaxed">
               Fill in your details and our counselors will reach out within 24 hours
             </p>
           </div>
         </div>
 
         {/* Form Content */}
-        <div className="px-8 py-8">
+        <div className="px-4 sm:px-6 py-5 sm:py-6">
           {isSuccess ? (
             /* Success Message */
-            <div className="text-center py-12 animate-fadeIn">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
-                <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-center py-10 sm:py-12 animate-fadeIn">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5 sm:mb-6 animate-bounce">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted!</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Application Submitted!</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">
                 Thank you for your interest. Our team will contact you shortly.
               </p>
-              <p className="text-sm text-gray-500">Closing in 3 seconds...</p>
+              <p className="text-xs sm:text-sm text-gray-500">Closing in 3 seconds...</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               
               {/* Name Field */}
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-gray-700 uppercase tracking-wide">
+                <label className="block text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wide">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <div className="relative group">
@@ -209,7 +211,7 @@ export default function ApplyModal() {
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
                     placeholder="Enter your full name"
-                    className={`w-full pl-12 pr-4 py-4 border-2 rounded-xl transition-all duration-300 outline-none text-gray-900 placeholder-gray-400 ${
+                    className={`w-full pl-11 pr-3 py-3 sm:py-4 border-2 rounded-xl transition-all duration-300 outline-none text-gray-900 placeholder-gray-400 text-sm sm:text-base ${
                       errors.name
                         ? 'border-red-400 bg-red-50 focus:border-red-500'
                         : 'border-gray-200 hover:border-blue-300 focus:border-blue-600 focus:shadow-lg focus:shadow-blue-100'
@@ -230,7 +232,7 @@ export default function ApplyModal() {
 
               {/* Email Field */}
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-gray-700 uppercase tracking-wide">
+                <label className="block text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wide">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <div className="relative group">
@@ -247,7 +249,7 @@ export default function ApplyModal() {
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
                     placeholder="your.email@example.com"
-                    className={`w-full pl-12 pr-4 py-4 border-2 rounded-xl transition-all duration-300 outline-none text-gray-900 placeholder-gray-400 ${
+                    className={`w-full pl-11 pr-3 py-3 sm:py-4 border-2 rounded-xl transition-all duration-300 outline-none text-gray-900 placeholder-gray-400 text-sm sm:text-base ${
                       errors.email
                         ? 'border-red-400 bg-red-50 focus:border-red-500'
                         : 'border-gray-200 hover:border-blue-300 focus:border-blue-600 focus:shadow-lg focus:shadow-blue-100'
@@ -268,7 +270,7 @@ export default function ApplyModal() {
 
               {/* Mobile Field */}
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-gray-700 uppercase tracking-wide">
+                <label className="block text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wide">
                   Mobile Number <span className="text-red-500">*</span>
                 </label>
                 <div className="relative group">
@@ -277,8 +279,8 @@ export default function ApplyModal() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <div className="absolute inset-y-0 left-12 flex items-center pointer-events-none">
-                    <span className="text-gray-500 font-semibold text-sm">+91</span>
+                  <div className="absolute inset-y-0 left-11 sm:left-12 flex items-center pointer-events-none">
+                    <span className="text-gray-500 font-semibold text-xs sm:text-sm">+91</span>
                   </div>
                   <input
                     type="tel"
@@ -289,7 +291,7 @@ export default function ApplyModal() {
                     onBlur={() => setFocusedField(null)}
                     placeholder="98765 43210"
                     maxLength={10}
-                    className={`w-full pl-20 pr-4 py-4 border-2 rounded-xl transition-all duration-300 outline-none text-gray-900 placeholder-gray-400 ${
+                    className={`w-full pl-16 sm:pl-20 pr-3 py-3 sm:py-4 border-2 rounded-xl transition-all duration-300 outline-none text-gray-900 placeholder-gray-400 text-sm sm:text-base ${
                       errors.mobile
                         ? 'border-red-400 bg-red-50 focus:border-red-500'
                         : 'border-gray-200 hover:border-blue-300 focus:border-blue-600 focus:shadow-lg focus:shadow-blue-100'
@@ -310,7 +312,7 @@ export default function ApplyModal() {
 
               {/* Course Dropdown */}
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-gray-700 uppercase tracking-wide">
+                <label className="block text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wide">
                   Select Course <span className="text-red-500">*</span>
                 </label>
                 <div className="relative group">
@@ -326,7 +328,7 @@ export default function ApplyModal() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('course')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full pl-12 pr-12 py-4 border-2 rounded-xl transition-all duration-300 outline-none appearance-none cursor-pointer text-gray-900 ${
+                    className={`w-full pl-11 pr-10 py-3 sm:py-4 border-2 rounded-xl transition-all duration-300 outline-none appearance-none cursor-pointer text-gray-900 text-sm sm:text-base ${
                       errors.course
                         ? 'border-red-400 bg-red-50 focus:border-red-500'
                         : 'border-gray-200 hover:border-blue-300 focus:border-blue-600 focus:shadow-lg focus:shadow-blue-100'
@@ -353,7 +355,7 @@ export default function ApplyModal() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-sm tracking-widest uppercase py-4 rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 transition-all duration-300 relative overflow-hidden group"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-xs sm:text-sm tracking-widest uppercase py-3.5 sm:py-4 rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 transition-all duration-300 relative overflow-hidden group"
               >
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -377,7 +379,7 @@ export default function ApplyModal() {
               </button>
 
               {/* Trust Badges */}
-              <div className="flex items-center justify-center gap-6 pt-4 text-xs text-gray-500">
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-3 sm:pt-4 text-[10px] sm:text-xs text-gray-500">
                 <div className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

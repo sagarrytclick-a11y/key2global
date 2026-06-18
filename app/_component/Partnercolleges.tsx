@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, GraduationCap, Globe } from "lucide-react";
 
 const colleges = [
   {
@@ -45,7 +44,7 @@ export default function PartnerColleges() {
     <section className="w-full bg-white py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 mb-12 text-center">
         <div className="flex items-center justify-center gap-2 mb-3">
-          <Globe className="w-3 h-3 text-[#4A90E2]" />
+          <svg className="w-3 h-3 text-[#4A90E2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" strokeWidth="2"/><ellipse cx="12" cy="12" rx="4" ry="10" strokeWidth="2"/><path d="M2 12h20M12 2a16 16 0 000 20 16 16 0 000-20z" strokeWidth="2"/></svg>
           <p className="text-xs font-bold tracking-[0.3em] uppercase text-[#4A90E2]">
             Global Network
           </p>
@@ -76,7 +75,7 @@ export default function PartnerColleges() {
 
                 {/* Small Badge */}
                 <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow border opacity-0 group-hover:opacity-100 transition">
-                  <ShieldCheck className="w-4 h-4 text-[#4A90E2]" />
+                  <svg className="w-4 h-4 text-[#4A90E2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 </div>
               </div>
 
@@ -87,7 +86,7 @@ export default function PartnerColleges() {
                 </p>
 
                 <div className="flex items-center justify-center gap-1 mt-1 opacity-0 group-hover:opacity-100 transition">
-                  <GraduationCap className="w-3 h-3 text-[#4A90E2]" />
+                  <svg className="w-3 h-3 text-[#4A90E2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
                   <span className="text-[9px] text-[#4A90E2] uppercase">
                     Partner
                   </span>

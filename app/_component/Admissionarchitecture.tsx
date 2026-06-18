@@ -78,7 +78,7 @@ const steps = [
 
 export default function AdmissionArchitecture() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-10 overflow-hidden">
+    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-10 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header */}
@@ -86,7 +86,7 @@ export default function AdmissionArchitecture() {
           <p className="text-[10.5px] font-bold tracking-[0.28em] uppercase text-blue-600 mb-4">
             Enterprise Workflow
           </p>
-          <h2 className="font-black text-gray-950 text-[2.8rem] sm:text-[3.6rem] leading-none tracking-tight uppercase">
+          <h2 className="font-black text-gray-950 text-[2rem] sm:text-[2.8rem] md:text-[3.6rem] leading-none tracking-tight uppercase">
             The Admission Architecture
           </h2>
           {/* Red underline accent */}
@@ -98,9 +98,9 @@ export default function AdmissionArchitecture() {
           {/* Connecting line (desktop only) */}
           <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-px bg-gray-200 z-0" />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-10 gap-x-6 relative z-10">
             {steps.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center group">
+              <div key={i} className="flex flex-col items-center text-center group mx-auto max-w-[200px] sm:max-w-none">
 
                 {/* Icon box */}
                 <div
@@ -129,7 +129,7 @@ export default function AdmissionArchitecture() {
                 </p>
 
                 {/* Description */}
-                <p className="text-gray-500 text-[12px] leading-relaxed font-normal max-w-[130px]">
+                <p className="text-gray-500 text-[12px] sm:text-[13px] leading-relaxed font-normal max-w-[150px] sm:max-w-[130px]">
                   {step.desc}
                 </p>
               </div>

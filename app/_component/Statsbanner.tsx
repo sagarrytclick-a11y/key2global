@@ -35,7 +35,7 @@ export default function StatsBanner() {
             <span className="font-black text-white text-[2.4rem] sm:text-[2.8rem] leading-none tracking-tight">
               {stat.value}
             </span>
-            <span className="mt-2 text-[10px] font-bold tracking-[0.18em] uppercase text-white/80">
+            <span className="mt-2 text-[10px] font-bold tracking-[0.18em] uppercase text-white/90">
               {stat.label}
             </span>
             <span className="mt-1 text-[10px] font-normal tracking-wide text-white/50">

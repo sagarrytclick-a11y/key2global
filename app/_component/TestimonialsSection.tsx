@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 const testimonials = [
@@ -83,39 +83,46 @@ export default function TestimonialsSection() {
     return () => window.removeEventListener('resize', updateItemsPerView);
   }, []);
 
-  // Auto slide
+  const totalSlides = useMemo(
+    () => Math.max(1, Math.ceil(testimonials.length / itemsPerView)),
+    [itemsPerView]
+  );
+
+  // Auto slide (only when more than one slide exists)
   useEffect(() => {
-    const maxIndex = Math.ceil(testimonials.length / itemsPerView) - 1;
+    if (totalSlides <= 1) return;
+
     const interval = setInterval(() => {
-      setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      setIndex((prev) => (prev >= totalSlides - 1 ? 0 : prev + 1));
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [itemsPerView]);
+  }, [totalSlides]);
 
-  const totalSlides = Math.ceil(testimonials.length / itemsPerView);
-  const visibleTestimonials = testimonials.slice(
-    index * itemsPerView,
-    index * itemsPerView + itemsPerView
+  const visibleTestimonials = useMemo(
+    () => testimonials.slice(index * itemsPerView, index * itemsPerView + itemsPerView),
+    [index, itemsPerView]
   );
 
-  // Fill remaining slots if needed
-  const displayTestimonials = [...visibleTestimonials];
-  while (displayTestimonials.length < itemsPerView) {
-    displayTestimonials.push(testimonials[displayTestimonials.length % testimonials.length]);
-  }
+  const displayTestimonials = useMemo(() => {
+    const result = [...visibleTestimonials];
+    while (result.length < itemsPerView) {
+      result.push(testimonials[result.length % testimonials.length]);
+    }
+    return result;
+  }, [itemsPerView, visibleTestimonials]);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white px-6 md:px-12 lg:px-24">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-3">
             Success Stories
           </h2>
-          <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
             What Our Students Say
           </h3>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
             Real experiences from students who achieved their dreams with our guidance
           </p>
         </div>
@@ -127,7 +134,7 @@ export default function TestimonialsSection() {
             {displayTestimonials.map((t, idx) => (
               <div
                 key={`${t.id}-${idx}`}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 {/* Quote Icon */}
                 <div className="mb-4">
@@ -136,7 +143,7 @@ export default function TestimonialsSection() {
                   </svg>
                 </div>
 
-                <p className="text-gray-700 italic mb-6 leading-relaxed text-sm">
+                <p className="text-gray-700 italic mb-6 leading-relaxed text-sm sm:text-[15px]">
                   "{t.feedback}"
                 </p>
 
@@ -144,7 +151,7 @@ export default function TestimonialsSection() {
                 <div className="h-px bg-gray-200 mb-4" />
 
                 <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-blue-100">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-blue-100 shrink-0">
                     <Image
                       src={t.avatar}
                       alt={t.name}
@@ -166,7 +173,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-3 sm:gap-6">
             {/* Previous Button */}
             <button
               onClick={() => setIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))}

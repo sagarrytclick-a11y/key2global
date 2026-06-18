@@ -1,42 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { useApplyModal } from "@/context/ApplyModalContext";
-
-function useCountdown() {
-  const [time, setTime] = useState({ h: 8, m: 24, s: 15 });
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime((prev) => {
-        const { h, m, s } = prev;
-        if (s > 0) return { h, m, s: s - 1 };
-        if (m > 0) return { h, m: m - 1, s: 59 };
-        if (h > 0) return { h: h - 1, m: 59, s: 59 };
-        clearInterval(id);
-        return { h: 0, m: 0, s: 0 };
-      });
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return time;
-}
-
-function pad(n: number) {
-  return String(n).padStart(2, "0");
-}
 
 export default function HeroSection() {
   const { openModal } = useApplyModal();
-  const timer = useCountdown();
 
   return (
     <section className="min-h-screen bg-[#eef0f6] flex items-center">
-      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-10 py-16">
+      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-10 py-16 sm:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* ── LEFT ── */}
-          <div>
+          <div className="text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 border border-gray-300 bg-white/80 backdrop-blur rounded-full px-4 py-1.5 mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
@@ -46,7 +22,7 @@ export default function HeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-black leading-[1] tracking-[-0.02em] text-[clamp(3rem,6.5vw,5rem)]">
+            <h1 className="font-black leading-[1] tracking-[-0.02em] text-[clamp(2.8rem,6vw,5rem)]">
               <span className="block text-gray-950">Empowering</span>
               <span className="block text-blue-600">Global Futures.</span>
               <span className="block text-gray-950">Premium</span>
@@ -54,7 +30,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Body */}
-            <p className="mt-7 text-[14px] font-semibold leading-[1.7] text-gray-700 max-w-[400px]">
+            <p className="mt-7 text-[14px] sm:text-[15px] font-semibold leading-[1.7] text-gray-700 max-w-[420px] mx-auto lg:mx-0">
               Your premier scholastic gateway for elite tech, business, and medical
               careers. In partnership with our specialized subsidiaries, we
               provide comprehensive college placement and strategic academic
@@ -62,10 +38,10 @@ export default function HeroSection() {
             </p>
 
             {/* CTAs */}
-            <div className="mt-9 flex flex-wrap gap-4 items-center">
+            <div className="mt-9 flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 items-stretch sm:items-center">
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2.5 bg-blue-700 hover:bg-blue-800 active:scale-[0.97] transition-all duration-200 text-white font-bold text-[11px] tracking-[0.2em] uppercase px-6 py-[14px] rounded-lg shadow-lg shadow-blue-200"
+                className="inline-flex items-center justify-center gap-2.5 bg-blue-700 hover:bg-blue-800 active:scale-[0.97] transition-all duration-200 text-white font-bold text-[11px] tracking-[0.2em] uppercase px-6 py-[14px] rounded-lg shadow-lg shadow-blue-200 w-full sm:w-auto"
               >
                 Apply to Colleges
                 {/* rocket icon */}
@@ -75,7 +51,7 @@ export default function HeroSection() {
                 </svg>
               </button>
               <a
-                href="#"
+                href="#partners"
                 className="inline-flex items-center font-bold text-[11px] tracking-[0.2em] uppercase px-6 py-[14px] rounded-lg border border-gray-400 hover:border-gray-700 text-gray-800 hover:text-gray-950 transition-all duration-200 active:scale-[0.97] bg-transparent"
               >
                 Our Partners
@@ -83,9 +59,9 @@ export default function HeroSection() {
             </div>
 
             {/* Subsidiaries List */}
-            <div className="mt-10 flex items-center gap-6">
-              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest border-r border-gray-300 pr-6">Our Group</span>
-              <div className="flex flex-wrap gap-5 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+            <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest border-b sm:border-b-0 sm:border-r border-gray-300 pb-2 sm:pb-0 sm:pr-6">Our Group</span>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
                 <span className="text-[10px] font-black tracking-tight text-blue-900 uppercase">MedicalCounselling</span>
                 <span className="text-[10px] font-black tracking-tight text-red-900 uppercase">Edugayoverseas</span>
                 <span className="text-[10px] font-black tracking-tight text-yellow-900 uppercase">Alphaworldeducation</span>
@@ -146,6 +122,7 @@ export default function HeroSection() {
                 src="https://i.pinimg.com/736x/f3/1b/00/f31b0078a93513b1493e9eabea7a9dec.jpg"
                 alt="Global Campuses"
                 fill
+                priority
                 className="object-cover"
               />
 

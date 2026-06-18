@@ -76,7 +76,7 @@ export default function CoursesSection() {
   const { openModal } = useApplyModal();
   
   return (
-    <section className="bg-white py-20 px-6 sm:px-10">
+    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Label */}
@@ -85,89 +85,90 @@ export default function CoursesSection() {
         </p>
 
         {/* Heading */}
-        <h2 className="font-black text-center text-[2.8rem] text-gray-950 text-[2.8rem] sm:text-[3.5rem] leading-[1.1] tracking-tight uppercase mb-6">
+        <h2 className="font-black text-center text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] text-gray-950 leading-[1.1] tracking-tight uppercase mb-6">
           Specialized Global Courses
         </h2>
 
         {/* Subheading */}
-       <p className="text-gray-700 text-center font-medium text-[17px] leading-relaxed max-w-3xl mx-auto mb-16">
+       <p className="text-gray-700 text-center font-medium text-[15px] sm:text-[17px] leading-relaxed max-w-3xl mx-auto mb-12 sm:mb-16">
   We don&apos;t just find colleges; we architect careers in the most
   high-demand domains of the next decade. Explore our curated
   selection of elite programs.
 </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {courses.map((course) => (
-            <div
-              key={course.id}
-              className="bg-white rounded-[24px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-              style={{
-                border: `2px solid ${course.borderColor}`,
-                boxShadow: `0 10px 30px -10px ${course.color}25`,
-              }}
-            >
-              {/* Top color stripe */}
-              <div className="h-1.5" style={{ background: course.color }} />
+              <div
+                key={course.id}
+                className="bg-white rounded-[24px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                style={{
+                  border: `2px solid ${course.borderColor}`,
+                  boxShadow: `0 10px 30px -10px ${course.color}25`,
+                  "--course-color": course.color,
+                  "--course-border": course.borderColor,
+                  "--course-bg": course.bgAccent,
+                } as React.CSSProperties}
+              >
+                {/* Top color stripe */}
+                <div className="h-1.5" style={{ background: course.color }} />
 
-              <div className="p-8 flex flex-col flex-1">
-                {/* Icon */}
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
-                  style={{ background: course.bgAccent }}
-                >
-                  {course.icon}
+                <div className="p-6 sm:p-8 flex flex-col flex-1">
+                  {/* Icon */}
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style={{ background: course.bgAccent }}
+                  >
+                    {course.icon}
+                  </div>
+
+                  {/* Category Title */}
+                  <h3
+                    className="font-black text-[18px] sm:text-[20px] tracking-tight uppercase leading-tight mb-6 sm:mb-8"
+                    style={{ color: course.color }}
+                  >
+                    {course.category}
+                  </h3>
+
+                  {/* Items */}
+                  <ul className="flex flex-col gap-5 sm:gap-6 flex-1">
+                    {course.items.map((item) => (
+                      <li key={item.title} className="flex gap-4">
+                        <CheckIcon color={course.color} />
+                        <div>
+                          <p className="font-bold text-gray-900 text-[14px] sm:text-[15px] tracking-tight uppercase leading-tight">
+                            {item.title}
+                          </p>
+                          <p className="text-gray-600 text-[13px] sm:text-[14px] font-medium mt-1.5 leading-snug">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA Button */}
+                  <button
+                    onClick={openModal}
+                    className="mt-8 sm:mt-10 w-full py-4 rounded-xl text-[12px] sm:text-[13px] font-extrabold tracking-[0.15em] uppercase transition-all duration-200 active:scale-[0.97] shadow-sm cursor-pointer hover:text-white"
+                    style={{
+                      border: `2px solid var(--course-border)`,
+                      color: "var(--course-color)",
+                      background: "transparent",
+                    }}
+                    onMouseEnter={(e) => {
+                      const btn = e.currentTarget as HTMLButtonElement;
+                      btn.style.background = "var(--course-color)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const btn = e.currentTarget as HTMLButtonElement;
+                      btn.style.background = "transparent";
+                    }}
+                  >
+                    {course.cta}
+                  </button>
                 </div>
-
-                {/* Category Title */}
-                <h3
-                  className="font-black text-[20px] tracking-tight uppercase leading-tight mb-8"
-                  style={{ color: course.color }}
-                >
-                  {course.category}
-                </h3>
-
-                {/* Items */}
-                <ul className="flex flex-col gap-6 flex-1">
-                  {course.items.map((item) => (
-                    <li key={item.title} className="flex gap-4">
-                      <CheckIcon color={course.color} />
-                      <div>
-                        <p className="font-bold text-gray-900 text-[15px] tracking-tight uppercase leading-tight">
-                          {item.title}
-                        </p>
-                        <p className="text-gray-600 text-[14px] font-medium mt-1.5 leading-snug">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA Button */}
-                <button
-                  onClick={openModal}
-                  className="mt-10 w-full py-4 rounded-xl text-[13px] font-extrabold tracking-[0.15em] uppercase transition-all duration-200 active:scale-[0.97] shadow-sm cursor-pointer"
-                  style={{
-                    border: `2px solid ${course.borderColor}`,
-                    color: course.color,
-                    background: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    const btn = e.currentTarget as HTMLButtonElement;
-                    btn.style.background = course.color;
-                    btn.style.color = "#fff";
-                  }}
-                  onMouseLeave={(e) => {
-                    const btn = e.currentTarget as HTMLButtonElement;
-                    btn.style.background = "transparent";
-                    btn.style.color = course.color;
-                  }}
-                >
-                  {course.cta}
-                </button>
               </div>
-            </div>
           ))}
         </div>
       </div>

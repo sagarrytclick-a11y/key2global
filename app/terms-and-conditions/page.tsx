@@ -7,6 +7,8 @@ export const metadata = {
   description: 'Terms and Conditions for Key2Global - Understand the terms governing your use of our services.',
 };
 
+const LAST_UPDATED = "June 15, 2026";
+
 export default function TermsAndConditions() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,7 +22,7 @@ export default function TermsAndConditions() {
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
           <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">Terms and Conditions</h1>
-          <p className="text-slate-300 text-lg">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p className="text-slate-300 text-lg">Last updated: {LAST_UPDATED}</p>
         </div>
       </header>
 

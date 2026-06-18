@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from 'next/image';
 import { subsidiaries } from '@/siteidentity';
 
@@ -7,6 +8,7 @@ const nodes = ["Georgia", "Bangladesh", "Russia", "Kyrgyzstan"];
 
 export default function EdugayOverseas() {
   const edugaySite = subsidiaries.find(s => s.name === "Edugaydoverseas");
+  const [logoFailed, setLogoFailed] = useState(false);
   return (
     <section className="bg-[#f0f2f7] py-20 px-4 sm:px-10">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -64,28 +66,23 @@ export default function EdugayOverseas() {
             className="flex items-center gap-4 mb-6 flex-col sm:flex-row group hover:opacity-90 transition-opacity"
           >
             <div className="relative w-16 h-16 shrink-0 bg-white rounded-lg p-2 shadow-md">
-              <Image
-                src="/logo/edugaayds.png"
-                alt="Edugaydoverseas Logo"
-                fill
-                className="object-contain"
-                onError={(e) => {
-                  // Fallback if logo doesn't exist - show globe icon
-                  e.currentTarget.style.display = 'none';
-                  const parent = e.currentTarget.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `
-                      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
-                        <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
-                          <circle cx="16" cy="16" r="12" stroke="#2563eb" strokeWidth="2"/>
-                          <ellipse cx="16" cy="16" rx="6" ry="12" stroke="#2563eb" strokeWidth="1.5"/>
-                          <path d="M4 16h24M16 4c-4 4-6 8-6 12s2 8 6 12M16 4c4 4 6 8 6 12s-2 8-6 12" stroke="#2563eb" strokeWidth="1.5"/>
-                        </svg>
-                      </div>
-                    `;
-                  }
-                }}
-              />
+              {logoFailed ? (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                  <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="12" stroke="#2563eb" strokeWidth="2"/>
+                    <ellipse cx="16" cy="16" rx="6" ry="12" stroke="#2563eb" strokeWidth="1.5"/>
+                    <path d="M4 16h24M16 4c-4 4-6 8-6 12s2 8 6 12M16 4c4 4 6 8 6 12s-2 8-6 12" stroke="#2563eb" strokeWidth="1.5"/>
+                  </svg>
+                </div>
+              ) : (
+                <Image
+                  src="/logo/edugaayds.png"
+                  alt="Edugaydoverseas Logo"
+                  fill
+                  className="object-contain"
+                  onError={() => setLogoFailed(true)}
+                />
+              )}
             </div>
             <h2 className="font-black text-gray-950 text-[2rem] sm:text-[2.5rem] leading-[1.05] tracking-tight">
               Edugaydoverseas.com

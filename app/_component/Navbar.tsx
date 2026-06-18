@@ -2,37 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { siteName, subsidiaries as subsidiarySites } from "@/siteidentity";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
-const tickerItems = subsidiarySites.map(sub => 
+const tickerItems = subsidiarySites.map((sub) =>
   `${sub.name}: ${sub.description}`
 );
-
-const institutionLinks = [
-  "bits Pilani",
-  "AIIMS Delhi",
-  "VIT VELLORE",
-  "IIT Bombay",
-];
-
-const mobileNav = [
-  { label: "Institutions", hasDropdown: true },
-  ...subsidiarySites.map(sub => ({ label: sub.name, hasDropdown: false })),
-  { label: "B.Tech & IoT", hasDropdown: false },
-  { label: "Global BBA", hasDropdown: false },
-  { label: "Student Login", hasDropdown: false },
-];
 
 export default function Navbar() {
   const { openModal } = useApplyModal();
   const [tickerIndex, setTickerIndex] = useState(0);
   const [tickerVisible, setTickerVisible] = useState(true);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileInstitutionsOpen, setMobileInstitutionsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Ticker cycling
   useEffect(() => {
@@ -44,17 +26,6 @@ export default function Navbar() {
       }, 350);
     }, 3000);
     return () => clearInterval(id);
-  }, []);
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    function handle(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handle);
-    return () => document.removeEventListener("mousedown", handle);
   }, []);
 
   // Lock body scroll when mobile menu is open
@@ -114,37 +85,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center flex-1 gap-1 ml-6" ref={dropdownRef}>
-            {/* Institutions dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setDropdownOpen((v) => !v)}
-                className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150"
-              >
-                Institutions
-                <svg
-                  className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {dropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-xl shadow-xl py-2 z-50">
-                  {institutionLinks.map((item) => (
-                    <a
-                      key={item}
-                      href="#"
-                      className="flex items-center gap-3 px-5 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-100 font-medium"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center flex-1 gap-1 ml-6">
             {subsidiarySites.slice(0, 3).map((sub) => (
               <a
                 key={sub.name}
@@ -161,12 +102,10 @@ export default function Navbar() {
             <div className="flex-1" />
 
             {/* Right links */}
-            <a href="#" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
-              <span className="block">B.Tech & IoT</span>
-            </a>
-            <a href="#" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
-              <span className="block">Global BBA</span>
-            </a>
+            <Link href="/btech" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
+              <span className="block">B.Tech & Lot</span>
+            </Link>
+         
            
 
             {/* Divider */}
@@ -198,36 +137,9 @@ export default function Navbar() {
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-[600px] border-t border-gray-100" : "max-h-0"}`}
         >
-          <nav className="bg-white px-5 py-4 flex flex-col gap-1">
+          <nav aria-label="Mobile navigation" className="bg-white px-5 py-4 flex flex-col gap-1">
             {/* Institutions */}
-            <div>
-              <button
-                onClick={() => setMobileInstitutionsOpen((v) => !v)}
-                className="w-full flex items-center justify-between px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                Institutions
-                <svg
-                  className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${mobileInstitutionsOpen ? "rotate-180" : ""}`}
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {mobileInstitutionsOpen && (
-                <div className="pl-6 pb-2 flex flex-col gap-1 mt-1">
-                  {institutionLinks.map((item) => (
-                    <a
-                      key={item}
-                      href="#"
-                      className="flex items-center gap-3 px-4 py-3 text-sm text-gray-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors font-medium"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+          
 
             {subsidiarySites.map((sub) => (
               <a
@@ -241,9 +153,10 @@ export default function Navbar() {
               </a>
             ))}
 
-            <a href="#" className="px-4 py-3.5 text-base font-bold text-blue-700 hover:bg-blue-50 rounded-lg transition-colors">
-              Student Login
-            </a>
+            <Link href="/btech" className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors">
+              B.Tech & IoT
+            </Link>
+        
 
             <div className="h-px bg-gray-100 my-3" />
 
