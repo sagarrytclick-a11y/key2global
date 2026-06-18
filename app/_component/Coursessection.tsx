@@ -159,10 +159,12 @@ export default function CoursesSection() {
                     onMouseEnter={(e) => {
                       const btn = e.currentTarget as HTMLButtonElement;
                       btn.style.background = "var(--course-color)";
+                      btn.style.color = "#fff";
                     }}
                     onMouseLeave={(e) => {
                       const btn = e.currentTarget as HTMLButtonElement;
                       btn.style.background = "transparent";
+                      btn.style.color = "var(--course-color)";
                     }}
                   >
                     {course.cta}

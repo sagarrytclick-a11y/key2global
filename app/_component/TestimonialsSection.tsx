@@ -10,7 +10,7 @@ const testimonials = [
     role: "B.Tech Student, Germany",
     feedback:
       "Key2Global made my dream of studying engineering in Germany possible. Everything from applications to visa was seamless.",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+    avatar: "https://i.pinimg.com/736x/8d/b7/f6/8db7f6a91935bc5bbfd84a71fefcfd18.jpg",
   },
   {
     id: 2,
@@ -18,15 +18,15 @@ const testimonials = [
     role: "MBBS Student, UK",
     feedback:
       "The counseling support was amazing. I secured admission in a top UK university without stress.",
-    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+    avatar: "https://i.pinimg.com/736x/89/4b/ff/894bff75c0b4ef5f34c9914377d13185.jpg",
   },
   {
     id: 3,
-    name: "Vikram Singh",
+    name: "Ishita Rao",
     role: "BBA, Canada",
     feedback:
       "Highly professional team. They guided me from course selection to visa approval.",
-    avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+    avatar: "https://i.pinimg.com/736x/3a/0c/d8/3a0cd8a35bb1c1d8390cd35987cd4a9e.jpg",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const testimonials = [
     role: "MBA, Australia",
     feedback:
       "Transparent process and great support. Got into a top MBA college.",
-    avatar: "https://randomuser.me/api/portraits/women/4.jpg",
+    avatar: "https://i.pinimg.com/736x/28/06/61/2806611f0d5d28ede2130650f6f96d71.jpg",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const testimonials = [
     role: "B.Tech, USA",
     feedback:
       "Perfect guidance for US admissions. SOP and applications were handled perfectly.",
-    avatar: "https://randomuser.me/api/portraits/men/5.jpg",
+    avatar: "https://i.pinimg.com/736x/6e/7d/9d/6e7d9d8a15b47ace4a5e0abc7a10434c.jpg",
   },
   {
     id: 6,
@@ -50,15 +50,15 @@ const testimonials = [
     role: "BBA, Dubai",
     feedback:
       "Very smooth process. They helped me pick the right college.",
-    avatar: "https://randomuser.me/api/portraits/women/6.jpg",
+    avatar: "https://i.pinimg.com/736x/99/9d/ef/999defdd7eedf178f6b5cdff4024c7ee.jpg",
   },
   {
     id: 7,
-    name: "Karan Malhotra",
+    name: "Neha Kapoor",
     role: "MS, Ireland",
     feedback:
       "Quick visa approval and great support throughout.",
-    avatar: "https://randomuser.me/api/portraits/men/7.jpg",
+    avatar: "https://i.pinimg.com/736x/83/48/80/83488035f3803f0bc8a7d0d94c438535.jpg",
   },
 ];
 
