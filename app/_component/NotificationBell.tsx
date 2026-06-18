@@ -130,7 +130,7 @@ export default function NotificationBell() {
                 <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded border ${getTagColor(notification.type)}`}>
                   {notification.tag}
                 </span>
-                <span className="text-[10px] text-slate-400 font-medium">Just now</span>
+                <span className="text-[10px] text-slate-500 font-medium">Just now</span>
               </div>
               <h4 className="font-bold text-slate-900 text-sm mb-1.5 group-hover:text-blue-600 transition-colors">
                 {notification.title}
@@ -149,14 +149,6 @@ export default function NotificationBell() {
         </div>
       </div>
 
-      <style jsx global>{`
-        @keyframes bell-ring {
-          0%, 100% { transform: rotate(0); }
-          5%, 15% { transform: rotate(10deg); }
-          10%, 20% { transform: rotate(-10deg); }
-          25% { transform: rotate(0); }
-        }
-      `}</style>
     </div>
   );
 }

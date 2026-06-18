@@ -45,21 +45,21 @@ export default function KnowledgeHub() {
   const { openModal } = useApplyModal();
   
   return (
-    <section className="bg-white py-16 px-4 sm:px-10">
+    <section className="bg-white py-16 px-4 sm:px-6 md:px-10">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header row */}
-        <div className="flex items-end justify-between mb-10">
-          <div>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+          <div className="text-center sm:text-left">
             <p className="text-[10.5px] font-bold tracking-[0.26em] uppercase text-blue-600 mb-2">
               Scholastic Insights
             </p>
-            <h2 className="font-black text-gray-950 text-[2.2rem] sm:text-[2.8rem] leading-none tracking-tight">
+            <h2 className="font-black text-gray-950 text-[2rem] sm:text-[2.8rem] leading-none tracking-tight">
               Global Knowledge Hub
             </h2>
           </div>
           <a
-            href="#"
+            href="/"
             className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 hover:text-blue-700 border-b-2 border-gray-800 hover:border-blue-700 pb-0.5 transition-colors duration-150 mb-1 shrink-0"
           >
             View All Articles
@@ -67,14 +67,14 @@ export default function KnowledgeHub() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
             <article
               key={article.id}
               className="group bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               {/* Image */}
-              <div className="overflow-hidden h-[190px]">
+              <div className="overflow-hidden h-[180px] sm:h-[190px]">
                 <img
                   src={article.image}
                   alt={article.title}
@@ -98,12 +98,12 @@ export default function KnowledgeHub() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-black text-gray-950 text-[15px] leading-snug tracking-tight mb-3 group-hover:text-blue-700 transition-colors duration-200">
+                <h3 className="font-black text-gray-950 text-[14px] sm:text-[15px] leading-snug tracking-tight mb-3 group-hover:text-blue-700 transition-colors duration-200">
                   {article.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-gray-500 text-[12.5px] font-normal leading-relaxed flex-1">
+                <p className="text-gray-500 text-[12.5px] sm:text-[13px] font-normal leading-relaxed flex-1">
                   {article.excerpt}
                 </p>
 
@@ -136,7 +136,7 @@ export default function KnowledgeHub() {
         {/* Mobile view all */}
         <div className="mt-8 sm:hidden flex justify-center">
           <a
-            href="#"
+            href="/"
             className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 hover:text-blue-700 border-b-2 border-gray-800 hover:border-blue-700 pb-0.5 transition-colors duration-150"
           >
             View All Articles

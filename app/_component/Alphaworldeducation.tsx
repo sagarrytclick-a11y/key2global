@@ -129,23 +129,11 @@ export default function AlphaWorldEducation() {
                 href={alphaSite?.url || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-lg text-[10.5px] font-bold tracking-[0.2em] uppercase transition-all duration-200 active:scale-[0.98] inline-block text-center"
+                className="w-full py-3 rounded-lg text-[10.5px] font-bold tracking-[0.2em] uppercase transition-all duration-200 active:scale-[0.98] inline-block text-center hover:bg-white/10 hover:text-white hover:border-white/50"
                 style={{
                   border: "1px solid rgba(255,255,255,0.25)",
                   color: "rgba(255,255,255,0.8)",
                   background: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  const btn = e.currentTarget as HTMLAnchorElement;
-                  btn.style.background = "rgba(255,255,255,0.1)";
-                  btn.style.color = "#fff";
-                  btn.style.borderColor = "rgba(255,255,255,0.5)";
-                }}
-                onMouseLeave={(e) => {
-                  const btn = e.currentTarget as HTMLAnchorElement;
-                  btn.style.background = "transparent";
-                  btn.style.color = "rgba(255,255,255,0.8)";
-                  btn.style.borderColor = "rgba(255,255,255,0.25)";
                 }}
               >
                 {region.cta}

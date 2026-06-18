@@ -1,6 +1,6 @@
 export const siteIdentity = {
   // Basic Information
-  name: "Key2Global",
+  name: "Key2Education",
   tagline: "Excellence in Global Learning",
   description: "Empowering Global Futures in Tech & Business.",
   type: "Educational Consulting Platform",
@@ -27,7 +27,7 @@ export const siteIdentity = {
     linkedin: "https://linkedin.com/company/key2global",
     twitter: "https://twitter.com/key2global",
     facebook: "https://facebook.com/key2global",
-    instagram: "https://instagram.com/key2global",
+    instagram: "https://www.instagram.com/key2education?igsh=MXhrZGdzMXFxYTc1eg%3D%3D&utm_source=qr",
     youtube: "https://youtube.com/@key2global"
   },
   

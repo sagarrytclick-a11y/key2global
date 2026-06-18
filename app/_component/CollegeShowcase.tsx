@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { MapPin, ArrowRight } from "lucide-react";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
 const colleges = [
@@ -65,21 +64,21 @@ const CollegeShowcase = () => {
   const { openModal } = useApplyModal();
   
   return (
-    <section className="bg-white py-24 px-6 font-sans">
+    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Simple Header */}
-        <div className="mb-20 text-center md:text-left">
-          <h2 className="text-black text-4xl md:text-6xl font-black uppercase tracking-tighter">
+        <div className="mb-12 sm:mb-16 text-center md:text-left">
+          <h2 className="text-black text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter">
             Top <span className="text-black">Colleges.</span>
           </h2>
         </div>
 
         {/* Minimal Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-x-12 lg:gap-y-16">
           {colleges.map((college, index) => (
             <div key={index} className="group flex flex-col cursor-pointer">
               {/* Image - Clean rounded corners, no borders */}
-              <div className="relative h-80 w-full rounded-2xl overflow-hidden mb-6">
+              <div className="relative h-64 sm:h-72 lg:h-80 w-full rounded-2xl overflow-hidden mb-6">
                 <img
                   src={college.image}
                   alt={college.name}
@@ -89,21 +88,21 @@ const CollegeShowcase = () => {
 
               {/* Text Content */}
               <div className="flex flex-col">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-black font-black text-2xl tracking-tight uppercase">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
+                  <h3 className="text-black font-black text-xl sm:text-2xl tracking-tight uppercase">
                     {college.name}
                   </h3>
-                  <span className="text-[10px] font-bold text-black border border-black px-2 py-1 rounded">
+                  <span className="text-[10px] font-bold text-black border border-black px-2 py-1 rounded self-start">
                     {college.rank}
                   </span>
                 </div>
                 
                 <p className="text-sm text-slate-500 flex items-center gap-1 mb-6 font-medium">
-                  <MapPin className="w-3.5 h-3.5" /> {college.location}
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> {college.location}
                 </p>
 
                 {/* Flat Stats */}
-                <div className="flex gap-8 mb-8 border-t border-slate-100 pt-4">
+                <div className="flex flex-wrap gap-6 sm:gap-8 mb-8 border-t border-slate-100 pt-4">
                   <div>
                     <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Placement</p>
                     <p className="text-sm font-bold text-black">{college.placement}</p>
@@ -120,7 +119,7 @@ const CollegeShowcase = () => {
                   className="w-full py-4 bg-black text-white rounded-xl text-xs font-black uppercase tracking-widest hover:bg-slate-800 transition-colors duration-300 flex items-center justify-center gap-2"
                 >
                   View Full Details
-                  <ArrowRight className="w-4 h-4" />
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </button>
               </div>
             </div>
