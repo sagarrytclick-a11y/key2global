@@ -8,7 +8,7 @@ export const siteIdentity = {
   
   // Contact Information
   contact: {
-    email: "Key2globaleducation@gmail.com",
+    email: "Key2edu26@gmail.com",
     phone: "+91-6239311536",
     whatsapp: "+91-9810718430",
   },
@@ -19,7 +19,7 @@ export const siteIdentity = {
     state: "Delhi",
     country: "India",
     postalCode: "110076",
-    fullAddress: "3rd Floor, US Complex Jasola Opp Apollo Hospital, New Delhi, Delhi, India - 110076"
+    fullAddress: "320,3rd Floor,US Complex Jasola Opp Apollo Hospital,New Delhi,Delhi,India 110076"
   },
   
   // Social Media Links
