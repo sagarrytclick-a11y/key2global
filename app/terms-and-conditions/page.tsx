@@ -1,10 +1,16 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { siteName, contact, address } from '@/siteidentity';
 
-export const metadata = {
-  title: `Terms and Conditions | ${siteName}`,
-  description: 'Terms and Conditions for Key2Global - Understand the terms governing your use of our services.',
+export const metadata: Metadata = {
+  title: "Terms and Conditions",
+  description: `Terms and Conditions for ${siteName} - Understand the terms governing your use of our services.`,
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: `Terms and Conditions | ${siteName}`,
+    description: `Understand the terms governing your use of ${siteName}'s services.`,
+  },
 };
 
 const LAST_UPDATED = "June 15, 2026";
@@ -79,7 +85,7 @@ export default function TermsAndConditions() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
               <li>We do not guarantee admission to any educational institution</li>
-              <li>Admission is subject to meeting the institution's eligibility criteria and selection process</li>
+              <li>Admission is subject to meeting the institution&apos;s eligibility criteria and selection process</li>
               <li>Information provided on our website is for general guidance and may change without notice</li>
               <li>Students are responsible for verifying all information directly with institutions</li>
               <li>Fees, scholarships, and program details are determined by respective institutions</li>
@@ -177,7 +183,7 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Changes to Terms</h2>
             <p className="text-gray-700 leading-relaxed">
-              We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. Your continued use of our services after such modifications constitutes acceptance of the updated Terms.
+              We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days&apos; notice prior to any new terms taking effect. Your continued use of our services after such modifications constitutes acceptance of the updated Terms.
             </p>
           </section>
 
@@ -206,7 +212,7 @@ export default function TermsAndConditions() {
 
           <section className="pt-6 border-t border-gray-200">
             <p className="text-gray-600 text-sm italic">
-              By using {siteName}'s services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
+              By using {siteName}&apos;s services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
             </p>
           </section>
 

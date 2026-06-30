@@ -1,12 +1,10 @@
-"use client";
-
 import Image from 'next/image';
 import { subsidiaries } from '@/siteidentity';
 
 export default function MedicalCounselling() {
   const medicalSite = subsidiaries.find(s => s.name === "MedicalCounselling");
   return (
-    <section className="bg-[#f5f6fa] py-20 px-4 sm:px-10">
+    <section className="bg-[#f5f6fa] py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
 
         {/* ── LEFT ── */}
@@ -31,7 +29,7 @@ export default function MedicalCounselling() {
                 className="object-contain"
               />
             </div>
-            <h2 className="font-black text-gray-950 text-[1.8rem] sm:text-[2.5rem] tracking-tight wrap-break-word">
+            <h2 className="font-black text-gray-950 text-[1.8rem] sm:text-[2.5rem] tracking-tight break-words">
               MedicalCounselling.com
             </h2>
           </a>
@@ -89,7 +87,7 @@ export default function MedicalCounselling() {
             href={medicalSite?.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-bold text-[11.5px] tracking-[0.2em] uppercase border-b border-blue-300 hover:border-blue-700 pb-0.5 transition-all duration-150"
+            className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-bold text-[11.5px] tracking-[0.2em] uppercase border-b-2 border-blue-300 hover:border-blue-700 pb-0.5 transition-all duration-150 hover:gap-3"
           >
             Enter Medical Portal
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -100,7 +98,7 @@ export default function MedicalCounselling() {
 
         {/* ── CENTER — Image ── */}
         <div className="lg:col-span-1 flex items-stretch">
-          <div className="w-full rounded-2xl overflow-hidden shadow-xl h-[320px] lg:h-full relative">
+          <div className="w-full rounded-2xl overflow-hidden shadow-xl h-[240px] sm:h-[320px] lg:h-full relative">
             <img
               src="/websites/medicalcounselling.png"
               alt="Medical counselling"

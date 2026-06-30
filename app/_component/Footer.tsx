@@ -12,7 +12,7 @@ export default function Footer() {
   const { openModal } = useApplyModal();
   
   return (
-    <footer className="bg-slate-900 text-white pt-16 pb-8 px-4 sm:px-6 md:px-12 lg:px-24 font-poppins mt-auto">
+    <footer className="bg-slate-900 text-white pt-16 pb-8 px-6 sm:px-8 lg:px-16 mt-auto">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12">
         
         {/* Brand Column */}

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
 const articles = [
@@ -45,25 +46,28 @@ export default function KnowledgeHub() {
   const { openModal } = useApplyModal();
   
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 md:px-10">
+    <section className="bg-white py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header row */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div className="text-center sm:text-left">
-            <p className="text-[10.5px] font-bold tracking-[0.26em] uppercase text-blue-600 mb-2">
+            <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-blue-600 bg-blue-50 px-4 py-2 rounded-full mb-4">
               Scholastic Insights
-            </p>
+            </span>
             <h2 className="font-black text-gray-950 text-[2rem] sm:text-[2.8rem] leading-none tracking-tight">
               Global Knowledge Hub
             </h2>
           </div>
-          <a
+          <Link
             href="/"
-            className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 hover:text-blue-700 border-b-2 border-gray-800 hover:border-blue-700 pb-0.5 transition-colors duration-150 mb-1 shrink-0"
+            className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 hover:text-blue-700 border-b-2 border-gray-800 hover:border-blue-700 pb-0.5 transition-colors duration-150 mb-1 shrink-0 group"
           >
             View All Articles
-          </a>
+            <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
 
         {/* Cards */}
@@ -71,23 +75,24 @@ export default function KnowledgeHub() {
           {articles.map((article) => (
             <article
               key={article.id}
-              className="group bg-white border border-gray-100 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="group bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Image */}
-              <div className="overflow-hidden h-[180px] sm:h-[190px]">
+              {/* Image with overlay */}
+              <div className="relative overflow-hidden h-[180px] sm:h-[190px]">
                 <img
                   src={article.image}
                   alt={article.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Body */}
-              <div className="p-5 flex flex-col flex-1">
+              <div className="p-5 sm:p-6 flex flex-col flex-1">
                 {/* Tag + read time */}
                 <div className="flex items-center gap-3 mb-3">
                   <span
-                    className="text-[9.5px] font-black tracking-widest uppercase px-2 py-0.5 rounded-sm"
+                    className="text-[9.5px] font-black tracking-widest uppercase px-2.5 py-1 rounded-md"
                     style={{ color: article.tagColor, background: article.tagBg }}
                   >
                     {article.tag}
@@ -114,13 +119,13 @@ export default function KnowledgeHub() {
                   </p>
                   <button
                     onClick={openModal}
-                    className="w-7 h-7 flex items-center justify-center rounded-full transition-all duration-200 group-hover:bg-orange-50 cursor-pointer"
+                    className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 bg-gray-50 hover:bg-blue-50 group/btn cursor-pointer"
                     aria-label="Read more"
                   >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <svg className="w-4 h-4 text-gray-400 group-hover/btn:text-blue-600 transition-colors duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path
                         d="M2 8h12M9 4l5 4-5 4"
-                        stroke="#f97316"
+                        stroke="currentColor"
                         strokeWidth="1.8"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -135,12 +140,15 @@ export default function KnowledgeHub() {
 
         {/* Mobile view all */}
         <div className="mt-8 sm:hidden flex justify-center">
-          <a
+          <Link
             href="/"
-            className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 hover:text-blue-700 border-b-2 border-gray-800 hover:border-blue-700 pb-0.5 transition-colors duration-150"
+            className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 hover:text-blue-700 border-b-2 border-gray-800 hover:border-blue-700 pb-0.5 transition-colors duration-150 group"
           >
             View All Articles
-          </a>
+            <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

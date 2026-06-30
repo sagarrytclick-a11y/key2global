@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 const colleges = [
@@ -41,7 +39,7 @@ const duplicatedColleges = [...colleges, ...colleges];
 
 export default function PartnerColleges() {
   return (
-    <section className="w-full bg-white py-16 overflow-hidden">
+    <section className="w-full bg-white py-16 sm:py-20 lg:py-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 mb-12 text-center">
         <div className="flex items-center justify-center gap-2 mb-3">
           <svg className="w-3 h-3 text-[#4A90E2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" strokeWidth="2"/><ellipse cx="12" cy="12" rx="4" ry="10" strokeWidth="2"/><path d="M2 12h20M12 2a16 16 0 000 20 16 16 0 000-20z" strokeWidth="2"/></svg>
@@ -101,22 +99,6 @@ export default function PartnerColleges() {
         <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
       </div>
 
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 40s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }

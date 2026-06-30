@@ -10,7 +10,7 @@ export default function EdugayOverseas() {
   const edugaySite = subsidiaries.find(s => s.name === "Edugaydoverseas");
   const [logoFailed, setLogoFailed] = useState(false);
   return (
-    <section className="bg-[#f0f2f7] py-20 px-4 sm:px-10">
+    <section className="bg-[#f0f2f7] py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* ── LEFT — Image + floating cards ── */}
@@ -26,7 +26,7 @@ export default function EdugayOverseas() {
           </div>
 
           {/* Floating card — 98% Visa Approval */}
-          <div className="absolute top-4 right-0 sm:right-[-10px] lg:right-[-30px] bg-red-600 rounded-2xl px-6 py-5 shadow-xl min-w-[150px]">
+          <div className="absolute top-4 right-0 sm:right-[-10px] lg:right-[-30px] bg-red-600 rounded-2xl px-4 sm:px-6 py-4 sm:py-5 shadow-xl min-w-[120px] sm:min-w-[150px]">
             <p className="font-black text-white text-[2.2rem] leading-none tracking-tight">
               98%
             </p>
@@ -36,7 +36,7 @@ export default function EdugayOverseas() {
           </div>
 
           {/* Floating card — Popular Nodes */}
-          <div className="absolute bottom-4 right-0 sm:right-[-10px] lg:right-[-30px] bg-white rounded-2xl px-5 py-4 shadow-xl min-w-[150px]">
+          <div className="absolute bottom-4 right-0 sm:right-[-10px] lg:right-[-30px] bg-white rounded-2xl px-4 sm:px-5 py-3 sm:py-4 shadow-xl min-w-[130px] sm:min-w-[150px]">
             <p className="font-black text-gray-900 text-[10px] tracking-[0.2em] uppercase mb-3">
               Popular Nodes
             </p>
@@ -121,7 +121,7 @@ export default function EdugayOverseas() {
             href={edugaySite?.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-full sm:w-auto min-w-[300px] bg-blue-700 hover:bg-blue-800 active:scale-[0.98] transition-all duration-200 text-white font-bold text-[11px] tracking-[0.22em] uppercase px-8 py-4 rounded-lg shadow-lg shadow-blue-200"
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-blue-700 hover:bg-blue-800 active:scale-[0.98] transition-all duration-200 text-white font-bold text-[11px] tracking-[0.22em] uppercase px-6 sm:px-8 py-4 rounded-lg shadow-lg shadow-blue-200"
           >
             Explore Overseas Portals
           </a>

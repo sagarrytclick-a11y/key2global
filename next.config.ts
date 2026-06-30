@@ -18,8 +18,42 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'i.pinimg.com',
-        port: '',
-        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'image-static.collegedunia.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'khuddam.in',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.shiksha.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.britannica.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.nmims.edu',
+      },
+      {
+        protocol: 'https',
+        hostname: 'educationpost.in',
+      },
+      {
+        protocol: 'https',
+        hostname: 'careerchoice360.in',
       },
     ],
   },

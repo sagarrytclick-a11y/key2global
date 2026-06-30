@@ -1,5 +1,3 @@
-"use client";
-
 import Image from 'next/image';
 import { subsidiaries } from '@/siteidentity';
 
@@ -31,7 +29,7 @@ export default function AlphaWorldEducation() {
   const alphaSite = subsidiaries.find(s => s.name === "AlphaWorldEducation");
   return (
     <section
-      className="relative py-20 px-4 sm:px-10 overflow-hidden"
+      className="relative py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16 overflow-hidden"
       style={{ background: "#0d1f3c" }}
     >
       {/* World map watermark */}
@@ -95,7 +93,7 @@ export default function AlphaWorldEducation() {
           {regions.map((region) => (
             <div
               key={region.id}
-              className="rounded-2xl flex flex-col p-7 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="rounded-2xl flex flex-col p-7 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:bg-white/10"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",

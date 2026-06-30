@@ -11,9 +11,9 @@ function CollegeCard({ college }: { college: College }) {
   const description = `${college.name} is a well-known engineering institute in ${college.location} offering strong academics, practical learning, and good career opportunities for B.Tech aspirants.`;
 
   return (
-    <article className="group h-full rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex gap-4">
-        <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-2xl">
+    <article className="group h-full rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div className="flex gap-3 sm:gap-4">
+        <div className="relative h-24 w-24 sm:h-32 sm:w-32 flex-shrink-0 overflow-hidden rounded-xl sm:rounded-2xl">
           <img
             src={college.image}
             alt={college.name}
@@ -51,7 +51,7 @@ function CollegeCard({ college }: { college: College }) {
           </div>
           <button
             onClick={openModal}
-            className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-all duration-200 hover:bg-blue-700 active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-3 sm:px-4 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-white transition-all duration-200 hover:bg-blue-700 active:scale-[0.98]"
           >
             Apply Now
           </button>
@@ -76,7 +76,7 @@ export default function BtechCollegeCards() {
   const filters = [ALL, ...REGION_ORDER];
 
   return (
-    <section id="colleges" className="bg-[#eef0f6] py-20 px-6 sm:px-10">
+    <section id="colleges" className="bg-[#eef0f6] py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-14">
           <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-blue-600 mb-4">
@@ -91,12 +91,12 @@ export default function BtechCollegeCards() {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
           {filters.map((f) => (
             <button
               key={f}
               onClick={() => { setFilter(f); setVisible(PER_PAGE); }}
-              className={`px-5 py-2.5 rounded-full font-bold text-[12px] tracking-widest uppercase transition-all duration-200 ${
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-[10px] sm:text-[12px] tracking-widest uppercase transition-all duration-200 ${
                 filter === f
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
                   : "bg-white text-gray-600 hover:text-blue-600 border border-gray-200 hover:border-blue-300"

@@ -38,7 +38,7 @@ export default function Navbar() {
     <div className="w-full">
       {/* ── Ticker ── */}
       <div className="bg-[#0d1b3e] text-white text-sm font-semibold">
-        <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-center gap-8 py-2.5 min-h-[40px]">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 flex items-center justify-center gap-8 py-2.5 min-h-[40px]">
           {/* Desktop: show all 3 separated by | */}
           <div className="hidden lg:flex items-center gap-8 text-base w-full justify-between">
             {subsidiarySites.slice(0, 3).map((sub, i) => (
@@ -59,7 +59,7 @@ export default function Navbar() {
             href={subsidiarySites[tickerIndex % subsidiarySites.length]?.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="lg:hidden transition-opacity duration-300 text-center hover:text-blue-300 transition-colors duration-200 cursor-pointer inline-block text-sm font-medium"
+            className="lg:hidden transition-all duration-300 text-center hover:text-blue-300 cursor-pointer inline-block text-sm font-medium"
             style={{ opacity: tickerVisible ? 1 : 0 }}
           >
             {tickerItems[tickerIndex]}
@@ -68,8 +68,8 @@ export default function Navbar() {
       </div>
 
       {/* ── Main Nav ── */}
-      <header className="bg-white border-b border-gray-200 shadow-md sticky top-0 z-50">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex items-center h-[72px] gap-6">
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm sticky top-0 z-50 supports-[backdrop-filter]:bg-white/80">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 flex items-center h-[72px] gap-6">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -114,7 +114,7 @@ export default function Navbar() {
             {/* Apply CTA */}
             <button
               onClick={openModal}
-              className="shrink-0 bg-blue-700 hover:bg-blue-800 active:scale-[0.97] transition-all duration-150 text-white rounded-lg px-6 py-2.5 text-center leading-tight shadow-lg shadow-blue-200"
+              className="shrink-0 bg-blue-700 hover:bg-blue-800 active:scale-[0.97] transition-all duration-150 text-white rounded-lg px-6 py-2.5 text-center leading-tight shadow-lg shadow-blue-200/50 hover:shadow-xl hover:shadow-blue-300/40"
             >
               <span className="block font-bold text-xs tracking-widest uppercase">APPLY NOW</span>
             </button>
@@ -135,12 +135,9 @@ export default function Navbar() {
 
         {/* ── Mobile drawer ── */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-[600px] border-t border-gray-100" : "max-h-0"}`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-[600px] border-t border-gray-100 shadow-lg" : "max-h-0"}`}
         >
           <nav aria-label="Mobile navigation" className="bg-white px-5 py-4 flex flex-col gap-1">
-            {/* Institutions */}
-          
-
             {subsidiarySites.map((sub) => (
               <a
                 key={sub.name}
@@ -156,16 +153,15 @@ export default function Navbar() {
             <Link href="/btech" className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors">
               B.Tech & IoT
             </Link>
-        
 
-            <div className="h-px bg-gray-100 my-3" />
+            <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-3" />
 
             <button
               onClick={() => {
                 openModal();
                 setMobileOpen(false);
               }}
-              className="mx-4 mb-4 bg-blue-700 hover:bg-blue-800 text-white rounded-lg py-4 text-center font-bold text-sm tracking-widest uppercase transition-colors shadow-lg shadow-blue-200 w-full"
+              className="mx-4 mb-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg py-4 text-center font-bold text-sm tracking-widest uppercase transition-all duration-200 shadow-lg shadow-blue-200/50 w-full"
             >
               APPLY NOW
             </button>

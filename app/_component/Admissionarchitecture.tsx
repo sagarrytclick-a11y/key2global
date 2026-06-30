@@ -1,5 +1,3 @@
-"use client";
-
 const steps = [
   {
     number: "01",
@@ -78,54 +76,48 @@ const steps = [
 
 export default function AdmissionArchitecture() {
   return (
-    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 md:px-10 overflow-hidden">
+    <section className="bg-white py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[10.5px] font-bold tracking-[0.28em] uppercase text-blue-600 mb-4">
+          <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-blue-600 bg-blue-50 px-4 py-2 rounded-full mb-5">
             Enterprise Workflow
-          </p>
+          </span>
           <h2 className="font-black text-gray-950 text-[2rem] sm:text-[2.8rem] md:text-[3.6rem] leading-none tracking-tight uppercase">
             The Admission Architecture
           </h2>
-          {/* Red underline accent */}
-          <div className="mx-auto mt-5 w-16 h-[3px] bg-red-600 rounded-full" />
+          <div className="mx-auto mt-5 w-16 h-[3px] bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
         </div>
 
         {/* Steps */}
         <div className="relative">
           {/* Connecting line (desktop only) */}
-          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-px bg-gray-200 z-0" />
+          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-gray-200 to-transparent z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-10 gap-x-6 relative z-10">
             {steps.map((step, i) => (
               <div key={i} className="flex flex-col items-center text-center group mx-auto max-w-[200px] sm:max-w-none">
 
+                {/* Number badge */}
+                <div className="mb-3 text-[11px] font-black tracking-widest" style={{ color: step.borderColor }}>
+                  STEP {step.number}
+                </div>
+
                 {/* Icon box */}
                 <div
-                  className="w-[76px] h-[76px] rounded-2xl bg-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                  className="w-[76px] h-[76px] rounded-2xl bg-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-2"
                   style={{
-                    border: `2px solid ${step.borderColor}`,
-                    boxShadow: `0 2px 16px 0 ${step.borderColor}18`,
+                    border: `2px solid ${step.borderColor}30`,
+                    boxShadow: `0 2px 16px 0 ${step.borderColor}10`,
                   }}
                 >
                   {step.icon}
                 </div>
 
-                {/* Horizontal rule below icon */}
-                <div
-                  className="w-full h-[2px] mb-4"
-                  style={{ background: `linear-gradient(to right, transparent, ${step.borderColor}40, transparent)` }}
-                />
-
-                {/* Number + label */}
-                <p
-                  className="font-black text-[12px] tracking-[0.12em] uppercase leading-snug mb-2"
-                  style={{ color: step.borderColor }}
-                >
-                  {step.number}.{" "}
-                  <span className="text-gray-950">{step.label}</span>
+                {/* Label */}
+                <p className="font-black text-gray-950 text-[12px] tracking-tight uppercase leading-snug mb-2">
+                  {step.label}
                 </p>
 
                 {/* Description */}

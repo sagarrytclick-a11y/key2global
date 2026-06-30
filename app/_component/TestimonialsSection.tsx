@@ -113,16 +113,16 @@ export default function TestimonialsSection() {
   }, [itemsPerView, visibleTestimonials]);
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 md:px-12 lg:px-24">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-3">
+          <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-blue-600 bg-blue-50 px-4 py-2 rounded-full mb-5">
             Success Stories
-          </h2>
+          </span>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
             What Our Students Say
           </h3>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-base sm:text-lg max-w-2xl mx-auto font-medium">
             Real experiences from students who achieved their dreams with our guidance
           </p>
         </div>
@@ -134,24 +134,27 @@ export default function TestimonialsSection() {
             {displayTestimonials.map((t, idx) => (
               <div
                 key={`${t.id}-${idx}`}
-                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="relative bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
               >
+                {/* Left accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-l-2xl" />
+
                 {/* Quote Icon */}
                 <div className="mb-4">
-                  <svg className="w-10 h-10 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-blue-500 opacity-15" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
 
-                <p className="text-gray-700 italic mb-6 leading-relaxed text-sm sm:text-[15px]">
-                  "{t.feedback}"
+                <p className="text-gray-600 italic mb-6 leading-relaxed text-sm sm:text-[15px]">
+                  &ldquo;{t.feedback}&rdquo;
                 </p>
 
                 {/* Divider */}
-                <div className="h-px bg-gray-200 mb-4" />
+                <div className="h-px bg-gradient-to-r from-blue-100 via-gray-200 to-transparent mb-4" />
 
                 <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-blue-100 shrink-0">
+                  <div className="relative w-11 h-11 rounded-full overflow-hidden ring-2 ring-blue-100 shrink-0">
                     <Image
                       src={t.avatar}
                       alt={t.name}

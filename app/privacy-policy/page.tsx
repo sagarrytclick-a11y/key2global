@@ -1,10 +1,16 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { siteName, contact, address } from '@/siteidentity';
 
-export const metadata = {
-  title: `Privacy Policy | ${siteName}`,
-  description: 'Privacy Policy for Key2Global - Learn how we collect, use, and protect your personal information.',
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: `Privacy Policy for ${siteName} - Learn how we collect, use, and protect your personal information.`,
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: `Privacy Policy | ${siteName}`,
+    description: `Learn how ${siteName} collects, uses, and protects your personal information.`,
+  },
 };
 
 const LAST_UPDATED = "June 15, 2026";
@@ -118,7 +124,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Children&apos;s Privacy</h2>
             <p className="text-gray-700 leading-relaxed">
               Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If we become aware that we have collected data from a child without parental consent, we will take steps to delete that information.
             </p>
@@ -127,7 +133,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Changes to This Privacy Policy</h2>
             <p className="text-gray-700 leading-relaxed">
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
+                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &ldquo;Last updated&rdquo; date. You are advised to review this Privacy Policy periodically for any changes.
             </p>
           </section>
 

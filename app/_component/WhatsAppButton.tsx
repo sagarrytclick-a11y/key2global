@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { contact, siteName } from "@/siteidentity";
 
@@ -12,7 +10,7 @@ export default function WhatsAppButton() {
       href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 left-8 z-[9999] flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#20ba5a] group"
+      className="fixed bottom-8 left-4 sm:left-8 z-[9999] flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#20ba5a] group"
       aria-label="Contact us on WhatsApp"
     >
       {/* WhatsApp Icon */}

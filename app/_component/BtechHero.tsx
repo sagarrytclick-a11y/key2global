@@ -15,7 +15,7 @@ export default function BtechHero() {
         <div className="absolute top-20 left-20 w-96 h-96 border border-white rounded-full" />
         <div className="absolute -bottom-20 -right-20 w-80 h-80 border border-white rounded-full" />
       </div>
-      <div className="relative w-full max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
+      <div className="relative w-full max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-16 py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* LEFT */}
           <div className="max-w-3xl">
