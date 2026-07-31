@@ -75,7 +75,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <div className="relative w-12 h-12 shrink-0">
               {/* K icon */}
-             <Image src="/logo.png" alt="logo" width={48} height={48} />
+              <Image src="/logo.png" alt="logo" width={48} height={48} />
               {/* small red accent dot */}
             </div>
             <div className="leading-none">
@@ -102,11 +102,15 @@ export default function Navbar() {
             <div className="flex-1" />
 
             {/* Right links */}
+            <Link href="/MBBS" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
+              <span className="block">MBBS</span>
+            </Link>
+
             <Link href="/btech" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
               <span className="block">B.Tech & Lot</span>
             </Link>
-         
-           
+
+
 
             {/* Divider */}
             <div className="h-10 w-px bg-gray-200 mx-3 shrink-0" />
@@ -149,6 +153,16 @@ export default function Navbar() {
                 {sub.name}
               </a>
             ))}
+            <Link href="" >
+            </Link>
+
+            <Link
+              href="/MBBS"
+              onClick={() => setMobileOpen(false)}
+              className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+            >
+              MBBS
+            </Link>
 
             <Link href="/btech" className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors">
               B.Tech & IoT
