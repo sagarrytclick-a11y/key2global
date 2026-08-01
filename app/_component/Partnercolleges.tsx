@@ -23,7 +23,7 @@ const colleges = [
   },
   {
     name: "SIBM Pune",
-    logo: "https://careerchoice360.in/colleges/images/symbosis-logo.jpg",
+    logo: "https://www.snaptest.org/mobile/img/clglogos/sitm.png",
   },
   {
     name: "NMIMS Mumbai",
@@ -39,7 +39,7 @@ const duplicatedColleges = [...colleges, ...colleges];
 
 export default function PartnerColleges() {
   return (
-    <section className="w-full bg-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="w-full bg-white py-[50px] overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 mb-12 text-center">
         <div className="flex items-center justify-center gap-2 mb-3">
           <svg className="w-3 h-3 text-[#4A90E2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" strokeWidth="2"/><ellipse cx="12" cy="12" rx="4" ry="10" strokeWidth="2"/><path d="M2 12h20M12 2a16 16 0 000 20 16 16 0 000-20z" strokeWidth="2"/></svg>

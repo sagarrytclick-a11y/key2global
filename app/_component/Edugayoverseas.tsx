@@ -10,7 +10,7 @@ export default function EdugayOverseas() {
   const edugaySite = subsidiaries.find(s => s.name === "Edugaydoverseas");
   const [logoFailed, setLogoFailed] = useState(false);
   return (
-    <section className="bg-[#f0f2f7] py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
+    <section className="bg-[#f0f2f7] py-[50px] px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* ── LEFT — Image + floating cards ── */}

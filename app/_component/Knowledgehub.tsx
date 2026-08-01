@@ -46,7 +46,7 @@ export default function KnowledgeHub() {
   const { openModal } = useApplyModal();
   
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
+    <section className="bg-white py-[50px] px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header row */}

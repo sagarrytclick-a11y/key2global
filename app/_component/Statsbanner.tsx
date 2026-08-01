@@ -23,7 +23,7 @@ const stats = [
 
 export default function StatsBanner() {
   return (
-    <section className="relative w-full bg-gradient-to-r from-[#1a2d5e] via-[#2d4a8a] to-[#1a2d5e] py-12 sm:py-16 px-6 sm:px-8 lg:px-16 overflow-hidden">
+    <section className="relative w-full bg-gradient-to-r from-[#1a2d5e] via-[#2d4a8a] to-[#1a2d5e] py-[50px] px-6 sm:px-8 lg:px-16 overflow-hidden">
       {/* Decorative dots */}
       <div className="absolute inset-0 opacity-[0.04]">
         <div className="absolute top-0 left-0 w-full h-full">

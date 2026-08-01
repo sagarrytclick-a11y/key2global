@@ -113,9 +113,9 @@ export default function TestimonialsSection() {
   }, [itemsPerView, visibleTestimonials]);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-16">
+    <section className="py-[50px] bg-gradient-to-b from-gray-50 to-white px-6 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8">
           <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-blue-600 bg-blue-50 px-4 py-2 rounded-full mb-5">
             Success Stories
           </span>

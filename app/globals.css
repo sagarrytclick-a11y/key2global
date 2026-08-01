@@ -79,6 +79,32 @@ body {
   animation-play-state: paused;
 }
 
+.hero-kenburns {
+  animation: heroKenburns 18s ease-out forwards;
+  transform-origin: center center;
+}
+
+.hero-line {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroRise 0.7s ease-out forwards;
+}
+
+.hero-line:nth-child(1) { animation-delay: 0.08s; }
+.hero-line:nth-child(2) { animation-delay: 0.18s; }
+.hero-line:nth-child(3) { animation-delay: 0.28s; }
+.hero-line:nth-child(4) { animation-delay: 0.38s; }
+.hero-line:nth-child(5) { animation-delay: 0.48s; }
+
+@keyframes heroKenburns {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+@keyframes heroRise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .animate-marquee-fast {
   animation: marquee 30s linear infinite;
 }

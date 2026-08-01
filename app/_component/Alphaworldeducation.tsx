@@ -29,7 +29,7 @@ export default function AlphaWorldEducation() {
   const alphaSite = subsidiaries.find(s => s.name === "AlphaWorldEducation");
   return (
     <section
-      className="relative py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16 overflow-hidden"
+      className="relative py-[50px] px-6 sm:px-8 lg:px-16 overflow-hidden"
       style={{ background: "#0d1f3c" }}
     >
       {/* World map watermark */}

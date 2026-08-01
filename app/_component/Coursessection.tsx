@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
 const courses = [
@@ -76,14 +77,29 @@ function CheckIcon({ color }: { color: string }) {
 }
 
 export default function CoursesSection() {
+  const router = useRouter();
   const { openModal } = useApplyModal();
+
+  const handleCourseAction = (courseId: string) => {
+    if (courseId === "btech") {
+      router.push("/btech", { scroll: false });
+      return;
+    }
+
+    if (courseId === "medical") {
+      router.push("/MBBS", { scroll: true });
+      return;
+    }
+
+    openModal();
+  };
   
   return (
-    <section className="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
+    <section className="bg-gradient-to-b from-white to-gray-50 py-[50px] px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Section header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8">
           <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-blue-600 bg-blue-50 px-4 py-2 rounded-full mb-5">
             Enterprise Curriculum
           </span>
@@ -147,7 +163,7 @@ export default function CoursesSection() {
 
                   {/* CTA Button */}
                   <button
-                    onClick={openModal}
+                    onClick={() => handleCourseAction(course.id)}
                     className="mt-8 sm:mt-10 w-full py-4 rounded-xl text-xs font-extrabold tracking-[0.15em] uppercase transition-all duration-200 active:scale-[0.97] shadow-sm cursor-pointer"
                     style={{
                       border: `1.5px solid ${course.borderColor}`,

@@ -4,7 +4,7 @@ import { subsidiaries } from '@/siteidentity';
 export default function MedicalCounselling() {
   const medicalSite = subsidiaries.find(s => s.name === "MedicalCounselling");
   return (
-    <section className="bg-[#f5f6fa] py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-16">
+    <section className="bg-[#f5f6fa] py-[50px] px-6 sm:px-8 lg:px-16">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
 
         {/* ── LEFT ── */}
