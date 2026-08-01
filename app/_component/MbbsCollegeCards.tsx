@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useDeferredValue } from "react";
 import { useApplyModal } from "@/context/ApplyModalContext";
 import { colleges, REGION_ORDER, PER_PAGE, type College } from "@/config/mbbs-college";
 
-const ALL = "All Cities";
+const ALL = "All States";
 
 function CollegeCard({ college }: { college: College }) {
   const { openModal } = useApplyModal();
-  const description = `${college.name} is a well-known medical institute in ${college.location} offering strong academics, clinical exposure, and good career opportunities for MBBS aspirants.`;
+  const description = `${college.name} is a private medical institute in ${college.location}, ${college.region}, offering MBBS education with clinical exposure for aspiring doctors.`;
 
   return (
     <article className="group h-full rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -26,11 +26,11 @@ function CollegeCard({ college }: { college: College }) {
             {college.region}
           </span>
           <h3 className="mt-2 text-base font-black leading-snug text-slate-900">
-            {college.name}
+            {college.name}, {college.location}
           </h3>
           <div className="mt-1 flex items-center gap-1 text-sm text-slate-500">
             <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            <span>{college.location}</span>
+            <span>{college.region}</span>
           </div>
         </div>
       </div>
@@ -43,10 +43,10 @@ function CollegeCard({ college }: { college: College }) {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
-              Avg Fees
+              Fees
             </p>
             <p className="mt-1 text-lg font-black text-slate-900">
-              {college.fees}
+              {college.fees ?? "On Request"}
             </p>
           </div>
           <button
@@ -63,16 +63,27 @@ function CollegeCard({ college }: { college: College }) {
 
 export default function MbbsCollegeCards() {
   const [filter, setFilter] = useState(ALL);
+  const [search, setSearch] = useState("");
   const [visible, setVisible] = useState(PER_PAGE);
+  const deferredSearch = useDeferredValue(search.trim().toLowerCase());
 
   const filtered = useMemo(() => {
-    if (filter === ALL) return colleges;
-    return colleges.filter((c) => c.region === filter);
-  }, [filter]);
+    let list = filter === ALL ? colleges : colleges.filter((c) => c.region === filter);
+    if (deferredSearch) {
+      list = list.filter(
+        (c) =>
+          c.name.toLowerCase().includes(deferredSearch) ||
+          c.location.toLowerCase().includes(deferredSearch) ||
+          c.region.toLowerCase().includes(deferredSearch)
+      );
+    }
+    return list;
+  }, [filter, deferredSearch]);
 
-  const visibleColleges = filtered.slice(0, visible);
-  const hasMore = visible < filtered.length;
-
+  // Show all colleges for a selected state; paginate only on "All States"
+  const pageSize = filter === ALL && !deferredSearch ? visible : filtered.length;
+  const visibleColleges = filtered.slice(0, pageSize);
+  const hasMore = filter === ALL && !deferredSearch && visible < filtered.length;
   const filters = [ALL, ...REGION_ORDER];
 
   return (
@@ -80,23 +91,52 @@ export default function MbbsCollegeCards() {
       <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-14">
           <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-emerald-600 mb-4">
-            India&apos;s Top Medical Colleges
+            Private MBBS Colleges · State-wise
           </p>
           <h2 className="font-black text-[2.5rem] sm:text-[3.5rem] leading-[1.1] tracking-tight uppercase text-gray-950">
             Find Your <span className="text-emerald-600">Dream College</span>
           </h2>
           <p className="text-gray-600 font-medium text-[16px] mt-4 max-w-2xl mx-auto">
-            Curated selection of top MBBS colleges across India with fee details
+            {colleges.length} private medical colleges across India, listed state-wise
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+        <div className="mb-8 max-w-xl mx-auto">
+          <label htmlFor="mbbs-search" className="sr-only">
+            Search colleges
+          </label>
+          <div className="relative">
+            <svg
+              className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input
+              id="mbbs-search"
+              type="search"
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setVisible(PER_PAGE);
+              }}
+              placeholder="Search by college, city, or state…"
+              className="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-11 pr-4 text-sm font-medium text-slate-800 shadow-sm outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
+            />
+          </div>
+        </div>
+
+        <div className="mb-12 flex gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-thin justify-start sm:flex-wrap sm:justify-center sm:overflow-visible">
           {filters.map((f) => (
             <button
               key={f}
-              onClick={() => { setFilter(f); setVisible(PER_PAGE); }}
-              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-[10px] sm:text-[12px] tracking-widest uppercase transition-all duration-200 ${
+              onClick={() => {
+                setFilter(f);
+                setVisible(PER_PAGE);
+              }}
+              className={`shrink-0 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold text-[10px] sm:text-[11px] tracking-widest uppercase transition-all duration-200 ${
                 filter === f
                   ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30"
                   : "bg-white text-gray-600 hover:text-emerald-600 border border-gray-200 hover:border-emerald-300"
@@ -107,10 +147,9 @@ export default function MbbsCollegeCards() {
           ))}
         </div>
 
-        {/* Colleges Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleColleges.map((college, idx) => (
-            <CollegeCard key={`${college.name}-${idx}`} college={college} />
+            <CollegeCard key={`${college.name}-${college.location}-${idx}`} college={college} />
           ))}
         </div>
 

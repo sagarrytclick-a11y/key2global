@@ -6,7 +6,12 @@ import { colleges } from "@/config/mbbs-college";
 
 export default function MbbsHero() {
   const { openModal } = useApplyModal();
-  const featuredColleges = [colleges[0], colleges[7], colleges[14], colleges[21]];
+  const featuredColleges = [
+    colleges.find((c) => c.region === "Delhi") ?? colleges[0],
+    colleges.find((c) => c.region === "Maharashtra") ?? colleges[1],
+    colleges.find((c) => c.region === "Karnataka") ?? colleges[2],
+    colleges.find((c) => c.region === "Tamil Nadu") ?? colleges[3],
+  ];
 
   return (
     <section className="relative min-h-[70vh] bg-gradient-to-br from-[#0d1f3c] via-[#0f2a4a] to-[#1a365d] flex items-center overflow-hidden">
@@ -17,7 +22,6 @@ export default function MbbsHero() {
       </div>
       <div className="relative w-full max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-16 py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT */}
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 border border-emerald-400/30 bg-emerald-400/10 backdrop-blur rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -29,10 +33,10 @@ export default function MbbsHero() {
               <span className="block text-white">Begin Your</span>
               <span className="block text-emerald-400">Medical Journey</span>
               <span className="block text-white">With India&apos;s Top</span>
-              <span className="block text-white">Medical Colleges.</span>
+              <span className="block text-white">Private Medical Colleges.</span>
             </h1>
             <p className="mt-6 text-[15px] font-medium leading-relaxed text-blue-200/80 max-w-[500px]">
-              Secure your seat at premier medical institutions across India.
+              Explore {colleges.length} private MBBS colleges across every state.
               From NEET counselling to final admission, we guide you through
               every step of the journey.
             </p>
@@ -69,13 +73,12 @@ export default function MbbsHero() {
                 ))}
               </div>
               <div>
-                <p className="text-white font-bold text-lg leading-none">25+</p>
-                <p className="text-blue-300/70 text-[11px] font-semibold tracking-wide">Partner Medical Colleges</p>
+                <p className="text-white font-bold text-lg leading-none">{colleges.length}</p>
+                <p className="text-blue-300/70 text-[11px] font-semibold tracking-wide">Private Medical Colleges</p>
               </div>
             </div>
           </div>
 
-          {/* RIGHT - Image */}
           <div className="hidden lg:block">
             <div className="relative">
               <div className="absolute -inset-4 bg-emerald-500/20 rounded-3xl blur-2xl" />
@@ -89,8 +92,8 @@ export default function MbbsHero() {
                 />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3">
-                <p className="text-white font-bold text-lg">#1</p>
-                <p className="text-blue-200 text-[10px] font-semibold uppercase tracking-wider">Admissions Partner</p>
+                <p className="text-white font-bold text-lg">25</p>
+                <p className="text-blue-200 text-[10px] font-semibold uppercase tracking-wider">States & UTs Covered</p>
               </div>
             </div>
           </div>
