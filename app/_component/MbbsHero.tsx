@@ -62,6 +62,12 @@ export default function MbbsHero() {
               >
                 View Colleges
               </a>
+              <a
+                href="#news"
+                className="inline-flex items-center font-bold text-[11px] tracking-[0.2em] uppercase text-emerald-300/90 hover:text-white transition-colors"
+              >
+                News &amp; Events
+              </a>
             </div>
 
             <div className="mt-12 flex items-center gap-8">
