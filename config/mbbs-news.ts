@@ -1,5 +1,8 @@
 export const MCC_NEWS_URL = "https://mcc.nic.in/news-events-ug-medical/";
 
+export const CHOICE_LOCKING_NOTICE_URL =
+  "https://cdnbbsr.s3waas.gov.in/s3e0f7a4d0ef9b84b83b693bbf3feb8e6e/uploads/2026/08/202608172008623120.pdf";
+
 export type MbbsNewsItem = {
   id: string;
   title: string;
@@ -9,9 +12,26 @@ export type MbbsNewsItem = {
   type: "list" | "notice";
   isNew: boolean;
   summary: string;
+  href?: string;
+  /** Official MCC ticker line shown in the Latest News strip */
+  headline?: string;
 };
 
 export const mbbsNews: MbbsNewsItem[] = [
+  {
+    id: "choice-locking-17-aug",
+    title: "Choice Locking will be available from today, i.e. 17.08.2026, at 05:30 PM",
+    date: "2026-08-17",
+    dateLabel: "17 Aug 2026",
+    tag: "Choice Locking",
+    type: "notice",
+    isNew: true,
+    href: CHOICE_LOCKING_NOTICE_URL,
+    headline:
+      "Candidates are hereby informed that Choice Locking will be available from today, i.e. 17.08.2026, at 05:30 PM. Choice filling for Round-1 is extended upto 11:59 PM of 18.08.2026.",
+    summary:
+      "MCC Notice No. 10: Choice Locking starts from 05:30 PM on 17.08.2026. Round-1 choice filling is extended up to 11:59 PM on 18.08.2026. Review choices on the MCC portal before you lock.",
+  },
   {
     id: "cw-supplementary-list",
     title:

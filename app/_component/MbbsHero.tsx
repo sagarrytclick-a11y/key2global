@@ -30,7 +30,7 @@ export default function MbbsHero() {
             <div className="inline-flex items-center gap-2 border border-emerald-400/30 bg-emerald-400/10 backdrop-blur rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-emerald-300">
-                2026–27 MBBS Admissions Open
+                Choice Locking from 5:30 PM today
               </span>
             </div>
 
