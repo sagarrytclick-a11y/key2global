@@ -9,8 +9,8 @@ export const siteIdentity = {
   // Contact Information
   contact: {
     email: "Key2edu26@gmail.com",
-    phone: "+91-6239311536",
-    whatsapp: "+91-9810718430",
+    phone: "+91-9310134887",
+    whatsapp: "+91-9310134887",
   },
   
   address: {  
