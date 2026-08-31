@@ -7,9 +7,11 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy Policy for ${siteName} - Learn how we collect, use, and protect your personal information.`,
   robots: { index: false, follow: true },
+  alternates: { canonical: "https://key2global.com/privacy-policy" },
   openGraph: {
     title: `Privacy Policy | ${siteName}`,
     description: `Learn how ${siteName} collects, uses, and protects your personal information.`,
+    url: "https://key2global.com/privacy-policy",
   },
 };
 

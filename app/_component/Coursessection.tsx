@@ -87,7 +87,7 @@ export default function CoursesSection() {
     }
 
     if (courseId === "medical") {
-      router.push("/MBBS", { scroll: true });
+      router.push("/PG", { scroll: true });
       return;
     }
 

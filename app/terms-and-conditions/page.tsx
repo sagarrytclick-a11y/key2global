@@ -7,9 +7,11 @@ export const metadata: Metadata = {
   title: "Terms and Conditions",
   description: `Terms and Conditions for ${siteName} - Understand the terms governing your use of our services.`,
   robots: { index: false, follow: true },
+  alternates: { canonical: "https://key2global.com/terms-and-conditions" },
   openGraph: {
     title: `Terms and Conditions | ${siteName}`,
     description: `Understand the terms governing your use of ${siteName}'s services.`,
+    url: "https://key2global.com/terms-and-conditions",
   },
 };
 

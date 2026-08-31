@@ -6,52 +6,59 @@ import WhatsAppButton from "./_component/WhatsAppButton";
 import NotificationBell from "./_component/NotificationBell";
 import Footer from "./_component/Footer";
 import ApplyModal from "./_component/ApplyModal";
+import JsonLd from "./_component/JsonLd";
 import { ApplyModalProvider } from "@/context/ApplyModalContext";
-import { siteName, tagline, siteDescription } from "@/siteidentity";
+import { contact, siteDescription, siteName, tagline } from "@/siteidentity";
+import {
+  DEFAULT_KEYWORDS,
+  SITE_OG_IMAGE,
+  SITE_URL,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://key2global.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: `${siteName} - ${tagline}`,
+    default: `${siteName} | MBBS, NEET-PG & Study Abroad Counselling`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
-  keywords: [
-    "education consultancy",
-    "study abroad",
-    "college admissions",
-    "B.Tech admissions",
-    "MBBS abroad",
-    "career counseling",
-    "global education",
-    "university admissions",
-    "India education",
-    "overseas education",
-  ],
-  authors: [{ name: siteName }],
+  applicationName: siteName,
+  keywords: [...DEFAULT_KEYWORDS],
+  authors: [{ name: siteName, url: SITE_URL }],
   creator: siteName,
   publisher: siteName,
+  referrer: "origin-when-cross-origin",
   formatDetection: {
     telephone: true,
     email: true,
     address: true,
   },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "en-IN": SITE_URL,
+      "x-default": SITE_URL,
+    },
+  },
   openGraph: {
-    title: `${siteName} - ${tagline}`,
+    title: `${siteName} | MBBS, NEET-PG & Study Abroad Counselling`,
     description: siteDescription,
-    url: "https://key2global.com",
-    siteName: siteName,
+    url: SITE_URL,
+    siteName,
     type: "website",
     locale: "en_IN",
     images: [
       {
-        url: "/banner.png",
+        url: SITE_OG_IMAGE,
         width: 1200,
         height: 630,
         alt: `${siteName} - ${tagline}`,
@@ -60,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} - ${tagline}`,
+    title: `${siteName} | MBBS, NEET-PG & Study Abroad Counselling`,
     description: siteDescription,
-    images: ["/banner.png"],
+    images: [SITE_OG_IMAGE],
   },
   robots: {
     index: true,
@@ -76,60 +83,23 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [{ url: "/favicon.ico" }, { url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png" }],
+    shortcut: ["/favicon.ico"],
   },
+  manifest: "/manifest.webmanifest",
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || undefined,
   },
   category: "education",
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: siteName,
-  alternateName: "Key2Global",
-  description: siteDescription,
-  url: "https://key2global.com",
-  logo: "https://key2global.com/logo.png",
-  foundingDate: "2020",
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+91-6239311536",
-    contactType: "customer service",
-    availableLanguage: ["English", "Hindi"],
-  },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "320, 3rd Floor, U.S Complex, Mathura Road, Jasola",
-    addressLocality: "Delhi",
-    addressRegion: "Delhi",
-    postalCode: "110076",
-    addressCountry: "IN",
-  },
-  sameAs: [
-    "https://linkedin.com/company/key2global",
-    "https://twitter.com/key2global",
-    "https://facebook.com/key2global",
-    "https://www.instagram.com/key2education",
-    "https://youtube.com/@key2global",
-  ],
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: siteName,
-  url: "https://key2global.com",
-  description: siteDescription,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://key2global.com/search?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
+  classification: "Education Consultancy",
+  other: {
+    "geo.region": "IN-DL",
+    "geo.placename": "New Delhi",
+    "geo.position": "28.5362;77.2853",
+    ICBM: "28.5362, 77.2853",
+    "contact:email": contact.email,
+    "contact:phone_number": contact.phone,
   },
 };
 
@@ -139,20 +109,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} h-full antialiased`}
-    >
+    <html lang="en-IN" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col scroll-smooth">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
           Skip to main content
         </a>
         <ApplyModalProvider>
