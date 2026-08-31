@@ -2,7 +2,8 @@ export const siteIdentity = {
   // Basic Information
   name: "Key2Education",
   tagline: "Excellence in Global Learning",
-  description: "Empowering Global Futures in Tech & Business.",
+  description:
+    "Key2Education helps students secure MBBS, NEET-PG, B.Tech and study-abroad admissions with expert counselling, college shortlisting and MCC guidance across India.",
   type: "Educational Consulting Platform",
   industry: "Education Technology",
   

@@ -1,46 +1,61 @@
 import type { Metadata } from "next";
 import BtechHero from "../_component/BtechHero";
 import BtechCollegeCards from "../_component/BtechCollegeCards";
-import { siteName } from "@/siteidentity";
+import JsonLd from "../_component/JsonLd";
+import {
+  breadcrumbJsonLd,
+  buildPageMetadata,
+  faqJsonLd,
+  serviceJsonLd,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "B.Tech Admissions",
+export const metadata: Metadata = buildPageMetadata({
+  title: "B.Tech Admissions India | Engineering College Counselling",
   description:
-    "Explore top B.Tech colleges across India. Secure your seat at premier engineering institutions with expert admission guidance from Key2Global.",
+    "Explore top B.Tech colleges across India. Get counselling for AI & ML, IoT, Cybersecurity and private engineering admissions with Key2Education.",
+  path: "/btech",
   keywords: [
-    "B.Tech admissions",
+    "B.Tech admissions 2026",
     "engineering colleges India",
-    "B.Tech counseling",
-    "top engineering colleges",
-    "IIT admissions",
+    "AI ML B.Tech",
+    "IoT engineering admissions",
     "private engineering colleges",
-    "B.Tech fees",
+    "B.Tech counselling Delhi",
   ],
-  openGraph: {
-    title: `B.Tech Admissions | ${siteName}`,
-    description:
-      "Secure your seat at premier engineering institutions across India. Expert guidance for B.Tech admissions.",
-    url: "https://key2global.com/btech",
-    images: [
-      {
-        url: "/banner.png",
-        width: 1200,
-        height: 630,
-        alt: `B.Tech Admissions - ${siteName}`,
-      },
-    ],
+});
+
+const faqs = [
+  {
+    question: "Which B.Tech specializations do you guide for?",
+    answer:
+      "We support Computer Science (AI & ML), Internet of Things (IoT), Cybersecurity and other high-demand engineering programs across India.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: `B.Tech Admissions | ${siteName}`,
-    description:
-      "Secure your seat at premier engineering institutions across India.",
+  {
+    question: "Can Key2Education help with private engineering college admissions?",
+    answer:
+      "Yes. We help with college shortlisting, application timelines, fee clarity and admission counselling for premier private engineering institutions.",
   },
-};
+];
 
 export default function BtechPage() {
   return (
     <div>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "B.Tech Admissions", path: "/btech" },
+        ])}
+      />
+      <JsonLd
+        data={serviceJsonLd({
+          name: "B.Tech Admission Counselling",
+          description:
+            "Engineering college admissions guidance for B.Tech programs across India.",
+          path: "/btech",
+          serviceType: "Engineering admission counselling",
+        })}
+      />
+      <JsonLd data={faqJsonLd(faqs)} />
       <BtechHero />
       <BtechCollegeCards />
     </div>

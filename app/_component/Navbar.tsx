@@ -106,6 +106,10 @@ export default function Navbar() {
               <span className="block">MBBS</span>
             </Link>
 
+            <Link href="/PG" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
+              <span className="block">PG News</span>
+            </Link>
+
             <Link href="/btech" className="px-4 py-2.5 text-sm font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-150 whitespace-nowrap text-center leading-tight">
               <span className="block">B.Tech & Lot</span>
             </Link>
@@ -153,9 +157,6 @@ export default function Navbar() {
                 {sub.name}
               </a>
             ))}
-            <Link href="" >
-            </Link>
-
             <Link
               href="/MBBS"
               onClick={() => setMobileOpen(false)}
@@ -164,7 +165,19 @@ export default function Navbar() {
               MBBS
             </Link>
 
-            <Link href="/btech" className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors">
+            <Link
+              href="/PG"
+              onClick={() => setMobileOpen(false)}
+              className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+            >
+              PG News
+            </Link>
+
+            <Link
+              href="/btech"
+              onClick={() => setMobileOpen(false)}
+              className="px-4 py-3.5 text-base font-semibold text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+            >
               B.Tech & IoT
             </Link>
 

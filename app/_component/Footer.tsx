@@ -80,11 +80,12 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-bold uppercase tracking-widest text-blue-500 mb-6">Quick Links</h4>
           <ul className="space-y-4 text-sm text-slate-300 font-medium">
-            <li><Link href="#about" className="hover:text-white transition-colors">About Us</Link></li>
-            <li><Link href="#partners" className="hover:text-white transition-colors">Partner Colleges</Link></li>
-            <li><Link href="#courses" className="hover:text-white transition-colors">Our Courses</Link></li>
-            <li><Link href="#testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
-            <li><Link href="#contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+            <li><Link href="/MBBS" className="hover:text-white transition-colors">MBBS / UG Admissions</Link></li>
+            <li><Link href="/PG" className="hover:text-white transition-colors">NEET-PG News</Link></li>
+            <li><Link href="/btech" className="hover:text-white transition-colors">B.Tech Admissions</Link></li>
+            <li><Link href="/#partners" className="hover:text-white transition-colors">Partner Colleges</Link></li>
+            <li><Link href="/#testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
           </ul>
         </div>
 
