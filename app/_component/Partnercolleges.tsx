@@ -23,7 +23,7 @@ const colleges = [
   },
   {
     name: "SIBM Pune",
-    logo: "https://www.snaptest.org/mobile/img/clglogos/sitm.png",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzO-PVapNwrfodND7QRY8q5uNv36FEnSXPmQxy1Q4D-Q&s=10",
   },
   {
     name: "NMIMS Mumbai",
